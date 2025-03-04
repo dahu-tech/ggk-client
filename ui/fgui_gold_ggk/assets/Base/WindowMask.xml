@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1280">
+  <displayList>
+    <graph id="n0_owxi" name="n0" xy="0,0" size="720,1280" type="rect" lineColor="#b2000000" fillColor="#b2000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+</component>

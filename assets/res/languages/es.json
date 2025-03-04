@@ -1,0 +1,21 @@
+{
+  "id": "es",
+  "txt": {
+    "errorcode1": "token error",
+    "errorcode2": "internal server error",
+    "errorcode3": "not enough money",
+    "errorcode4": "network error, pls check your network",
+    "errorcode5": "init error, pls try again later",
+    "select_bet": "Please select bet first",
+    "not_enough_money": "not enough balance!",
+    "win_up_to": "Win_up_to_{1}"
+  },
+  "label": {
+    "auto_spin_title": "Autoplay Options Number Of Bets",
+    "totle_bet_title": "Total Bet",
+    "rule_1": "Raspa la Estrella de la Suerte para intentar ganar premios. En el juego, solo debes coincidir con un número ganador (Winning Number) para ganar el monto correspondiente debajo del número! ",
+    "rule_2": "Por cada 10 billetes, consigue uno gratis. ",
+    "rule_3": "¡Ilumina los 5 números ganadores para obtener el gran premio extra del JACKPOT!",
+    "rule_title": "Sobre el Juego"
+  }
+}

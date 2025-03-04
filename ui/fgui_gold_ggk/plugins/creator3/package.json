@@ -1,0 +1,11 @@
+{
+  "name": "creator3",
+  "displayName": "creator3",
+  "description": "",
+  "version": "1.0",
+  "author": {
+    "name": "Esc"
+  },
+  "icon": "",
+  "main": "main.js"
+}

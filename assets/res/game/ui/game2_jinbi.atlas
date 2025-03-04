@@ -1,0 +1,90 @@
+
+game2_jinbi.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jinbi/jb0001
+  rotate: false
+  xy: 80, 81
+  size: 64, 77
+  orig: 85, 85
+  offset: 10, 4
+  index: -1
+jinbi/jb0002
+  rotate: false
+  xy: 2, 160
+  size: 76, 77
+  orig: 85, 85
+  offset: 4, 4
+  index: -1
+jinbi/jb0003
+  rotate: false
+  xy: 2, 81
+  size: 76, 77
+  orig: 85, 85
+  offset: 4, 4
+  index: -1
+jinbi/jb0004
+  rotate: false
+  xy: 80, 160
+  size: 76, 77
+  orig: 85, 85
+  offset: 4, 4
+  index: -1
+jinbi/jb0005
+  rotate: false
+  xy: 2, 2
+  size: 70, 77
+  orig: 85, 85
+  offset: 7, 4
+  index: -1
+jinbi/jb0006
+  rotate: false
+  xy: 158, 160
+  size: 64, 77
+  orig: 85, 85
+  offset: 10, 4
+  index: -1
+jinbi/jb0007
+  rotate: false
+  xy: 74, 2
+  size: 54, 77
+  orig: 85, 85
+  offset: 15, 4
+  index: -1
+jinbi/jb0008
+  rotate: false
+  xy: 130, 2
+  size: 40, 77
+  orig: 85, 85
+  offset: 22, 4
+  index: -1
+jinbi/jb0009
+  rotate: false
+  xy: 224, 160
+  size: 12, 77
+  orig: 85, 85
+  offset: 36, 4
+  index: -1
+jinbi/jb0010
+  rotate: false
+  xy: 198, 81
+  size: 32, 77
+  orig: 85, 85
+  offset: 26, 4
+  index: -1
+jinbi/jb0011
+  rotate: false
+  xy: 146, 81
+  size: 50, 77
+  orig: 85, 85
+  offset: 17, 4
+  index: -1
+ttt
+  rotate: false
+  xy: 172, 27
+  size: 52, 52
+  orig: 60, 60
+  offset: 4, 4
+  index: -1

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="iaouwyjs">
+  <resources>
+    <component id="lzwb6i" name="LoadingPackage.xml" path="/" exported="true"/>
+    <component id="l2k948" name="AlertView.xml" path="/" exported="true"/>
+    <image id="evse5" name="圆角矩形 7@2x.png" path="/res/" exported="true" scale="9grid" scale9grid="20,15,228,10"/>
+    <component id="euyv6g" name="TipsContainer.xml" path="/" exported="true"/>
+    <component id="ojei2m" name="Btn_close.xml" path="/com/"/>
+    <image id="pkbdf0" name="diban.png" path="/res/"/>
+    <image id="m01611" name="MovieClip3_0003.png" path="/res/"/>
+    <component id="q6fzf2" name="ToastView.xml" path="/" exported="true"/>
+    <component id="q6fzf3" name="Root.xml" path="/" exported="true"/>
+    <component id="q6fzf4" name="Com_layer.xml" path="/com/"/>
+    <component id="lwfqf8" name="LoadingView.xml" path="/" exported="true"/>
+    <component id="lwfqf9" name="Pb_loading.xml" path="/com/"/>
+    <component id="owxifa" name="SceneMask.xml" path="/" exported="true"/>
+    <component id="owxifb" name="WindowMask.xml" path="/" exported="true"/>
+    <image id="k15rfc" name="关闭.png" path="/res/"/>
+    <image id="k15rfd" name="NOTICE.png" path="/res/"/>
+    <sound id="fyu2fe" name="button.mp3" path="/sound/" exported="true"/>
+    <misc id="o2xzfh" name="game2_xiaoma.atlas" path="/ani/xiaoma/"/>
+    <image id="o2xzfi" name="game2_xiaoma.png" path="/ani/xiaoma/"/>
+    <spine id="o2xzfj" name="game2_xiaoma.json" path="/ani/xiaoma/" width="147" height="144" require="o2xzfh,o2xzfi" atlasNames="game2_xiaoma" anchor="74,132"/>
+    <image id="o2xzfk" name="loadingbeijing.jpg" path="/res/"/>
+    <image id="j4c8fn" name="OK.png" path="/res/"/>
+    <component id="j4c8fo" name="Btn_ok.xml" path="/com/"/>
+    <image id="dtysfp" name="jdt.png" path="/res/"/>
+    <image id="dtysfq" name="jdtd.png" path="/res/"/>
+    <image id="dtysfr" name="Lotto-Scratchcard-loading.jpg" path="/res/"/>
+  </resources>
+  <publish name="" path="..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\assets\res\game\\script"/>
+</packageDescription>

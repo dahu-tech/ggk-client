@@ -1,0 +1,14 @@
+{
+  "ver": "1.1.40",
+  "importer": "prefab",
+  "imported": true,
+  "uuid": "8ba9a7f5-bf94-413f-a4a7-b849b8ff93d2",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "syncNodeName": "FlyPrefab",
+    "persistent": false
+  }
+}

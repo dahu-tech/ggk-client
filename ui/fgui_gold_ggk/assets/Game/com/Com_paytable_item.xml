@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="106,95">
+  <displayList>
+    <text id="n8_f0bs" name="tf_id" xy="0,0" size="106,41" fontSize="30" color="#ff53f1" vAlign="middle" text="123456"/>
+    <list id="n10_f0bs" name="list_grid" xy="2,35" size="100,60" layout="flow_hz" scroll="horizontal" defaultItem="ui://1as7p2p8f0bscw" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

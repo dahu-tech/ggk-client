@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,550">
+  <displayList>
+    <image id="n59_f0bs" name="n59" src="f0bsct" fileName="res/img_black_bg.png" xy="0,0" size="720,550" alpha="0.9"/>
+    <text id="n60_f0bs" name="n60" xy="29,24" size="504,43" customData="auto_spin_title" fontSize="31" color="#ffffff" vAlign="middle" text="Autoplay Options Number Of Bets"/>
+    <list id="n63_f0bs" name="list_autospin" xy="34,93" size="669,277" layout="flow_hz" overflow="hidden" lineGap="18" colGap="28" defaultItem="ui://1as7p2p8f0bscq">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

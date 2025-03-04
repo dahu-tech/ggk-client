@@ -1,0 +1,125 @@
+getGameInfo
+
+Ipo{
+	"userId": "123",
+	"currencyId": "cny"
+}
+
+Dto
+{
+	//玩家信息
+	"playerInfo":{
+		"balance": 10000//玩家身上的钱
+	},
+	//游戏信息，按bet分组
+	"gameInfo":[
+		{
+			"bet" : 10, //下注额，与下面betJpBonus中的数据应该是一一对应关系
+			"freeSpinCount" : 0,//免费摇奖次数
+			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+		},
+		{
+			"bet" : 50, //下注额
+			"freeSpinCount" : 0,//免费摇奖次数
+			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+		},
+		{
+			"bet" : 100, //下注额
+			"freeSpinCount" : 0,//免费摇奖次数
+			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+		}
+	],
+	//纯配置信息
+	"meta":{
+		//下注值
+		"chips": [
+			{"chipsId": 1, "bet" : "10", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [100, 200, 400, 800], "jpReward":1000},
+			{"chipsId": 2, "bet" : "50", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [200, 400, 800, 100], "jpReward":1000},
+			{"chipsId": 3, "bet" : "100", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [1000, 2000, 4000, 8000], "jpReward":1000},
+			{"chipsId": 4, "bet" : "200", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [400, 800, 1600, 3200], "jpReward":1000},
+			{"chipsId": 5, "bet" : "500", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [1000, 2000, 4000, 8000], "jpReward":1000},
+			{"chipsId": 6, "bet" : "1000", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [2000, 4000, 8000, 16000], "jpReward":1000}
+		]
+		
+	}
+}
+
+bet
+
+Ipo{
+	"userId": "123",
+	"currencyId": "cny"
+	"chipsId" : 10 //下注额
+	"isFreeSpin?" : true //如果是一定先消耗免费free spin，可以不传
+}
+
+Dto
+{
+	//玩家信息
+	"playerInfo":{
+		"balance": 9990//玩家身上的钱
+	},
+	//总的结果信息
+	"resultInfo":{
+		"resultNumList":[{//彩票上的所有元素
+			"num":5, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//-1代表没中奖
+		},{
+			"num":2, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":3, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":4, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":1, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":10, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":7, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":8, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":9, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":6, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":12, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		},{
+			"num":11, 
+			"rewardType":1,//1-基础奖金,2-jp奖金
+			"rewardIdx":0//
+		}],
+		"rewardNumList":[1,2,3,4,5],//彩票中奖数字
+		"totalReward":10000,//所有彩票的奖励总和
+		"gameItemInfo":{
+			"bet" : 10, //下注额
+			"freeSpinCount" : 0,//免费摇奖次数
+			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+		}
+		"jpRewardInfo":{//彩票jp奖励信息
+			"isTriggerJpReward": true,//是否收集齐彩票，触发jp抽奖
+		}
+		
+	}
+}

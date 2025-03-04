@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,128">
+  <controller name="c1" pages="3,10,4,j,5,q,6,k,7,a,2,沙锤,1,吉他,0,帽子,8,wild,9,bonus,10,lottory,11,bonus+,12,bingo" selected="0"/>
+  <controller name="c2" pages="0,无遮罩,1,有遮罩" selected="1"/>
+  <controller name="c3" pages="0,非中奖元素,1,中奖元素" selected="1"/>
+  <controller name="c4" pages="0,不模糊,1,模糊" selected="0"/>
+  <displayList>
+    <image id="n58_ihx9" name="n58" src="o2xzfd" fileName="res/symbol-a.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="7"/>
+    </image>
+    <image id="n59_ihx9" name="n59" src="o2xzf3" fileName="res/symbol-k.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="6"/>
+    </image>
+    <image id="n60_ihx9" name="n60" src="o2xzez" fileName="res/symbol-q.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="5"/>
+    </image>
+    <image id="n61_ihx9" name="n61" src="o2xzf7" fileName="res/symbol-j.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="4"/>
+    </image>
+    <image id="n62_ihx9" name="n62" src="o2xzff" fileName="res/symbol-10.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="3"/>
+    </image>
+    <image id="n63_ihx9" name="n63" src="o2xzf5" fileName="res/symbol-jita.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <image id="n64_ihx9" name="n64" src="o2xzf1" fileName="res/symbol-maozi.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n65_ihx9" name="n65" src="o2xzex" fileName="res/symbol-shachui.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <image id="n66_ihx9" name="n66" src="o2xzfh" fileName="res/symbol-wild.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="8"/>
+    </image>
+    <image id="n67_ihx9" name="n67" src="o2xzf9" fileName="res/symbol-bonus.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="9"/>
+    </image>
+    <image id="n68_ihx9" name="n68" src="o2xzfb" fileName="res/symbol-bingo.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="10"/>
+    </image>
+    <image id="n69_ihx9" name="n69" src="o2xzfk" fileName="res/symbol-bonus-wuzi.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n89_j4c8">
+      <gearDisplay controller="c1" pages="11"/>
+    </image>
+    <group id="n89_j4c8" name="n89" xy="-44,-44" size="216,216" group="n74_o2xz" advanced="true">
+      <gearDisplay controller="c4" pages="0"/>
+    </group>
+    <image id="n77_j4c8" name="n77" src="o2xzfe" fileName="res/symbol-a-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="7"/>
+    </image>
+    <image id="n78_j4c8" name="n78" src="o2xzf4" fileName="res/symbol-k-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="6"/>
+    </image>
+    <image id="n79_j4c8" name="n79" src="o2xzf0" fileName="res/symbol-q-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="5"/>
+    </image>
+    <image id="n80_j4c8" name="n80" src="o2xzf8" fileName="res/symbol-j-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="4"/>
+    </image>
+    <image id="n81_j4c8" name="n81" src="o2xzew" fileName="res/symbol-10-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="3"/>
+    </image>
+    <image id="n82_j4c8" name="n82" src="o2xzf6" fileName="res/symbol-jita-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <image id="n83_j4c8" name="n83" src="o2xzf2" fileName="res/symbol-maozi-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n84_j4c8" name="n84" src="o2xzey" fileName="res/symbol-shachui-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <image id="n85_j4c8" name="n85" src="o2xzfg" fileName="res/symbol-wild-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="8"/>
+    </image>
+    <image id="n86_j4c8" name="n86" src="o2xzfa" fileName="res/symbol-bonus-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="9"/>
+    </image>
+    <image id="n87_j4c8" name="n87" src="o2xzfc" fileName="res/symbol-bingo-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="10"/>
+    </image>
+    <image id="n88_j4c8" name="n88" src="o2xzfj" fileName="res/symbol-bonus-wuzi-m.png" xy="64,64" pivot="0.5,0.5" anchor="true" group="n90_j4c8">
+      <gearDisplay controller="c1" pages="11"/>
+    </image>
+    <group id="n90_j4c8" name="n90" xy="-44,-44" size="216,216" group="n74_o2xz" advanced="true">
+      <gearDisplay controller="c4" pages="1"/>
+    </group>
+    <component id="n76_o2xz" name="com_free_spin_num" src="o2xzfq" fileName="com/Com_unit_free_spin_num.xml" xy="-13,84" group="n74_o2xz">
+      <gearDisplay controller="c1" pages="11"/>
+    </component>
+    <component id="n75_o2xz" name="com_bingo" src="f0bsd0" fileName="com/Com_bingo_item.xml" xy="64,64" pivot="0.5,0.5" anchor="true" group="n74_o2xz">
+      <gearDisplay controller="c1" pages="12"/>
+    </component>
+    <group id="n74_o2xz" name="n74" xy="-44,-44" size="216,216" advanced="true">
+      <gearDisplay controller="c3" pages="0"/>
+    </group>
+    <text id="n70_ihx9" name="tf_times" xy="63,80" pivot="0.5,0.5" anchor="true" size="8,14" font="ui://1as7p2p8ihx9bd" fontSize="10" color="#ffffff" align="center" vAlign="middle" text="1">
+      <gearDisplay controller="c1" pages="11"/>
+    </text>
+  </displayList>
+</component>

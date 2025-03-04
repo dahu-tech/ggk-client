@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1280" opaque="false">
+  <displayList>
+    <loader3D id="n0_ojgw" name="ani" xy="0,-10" size="720,1280" touchable="false" url="ui://1as7p2p8o2xze9" animation="animation" skin=""/>
+  </displayList>
+</component>

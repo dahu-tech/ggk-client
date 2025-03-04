@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="163,81" extention="Button">
+  <displayList>
+    <image id="n11_k15r" name="n11" src="j4c8fn" fileName="res/OK.png" xy="0,0"/>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+</component>

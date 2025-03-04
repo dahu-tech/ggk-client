@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,71" pivot="0.5,0.5" extention="Button">
+  <displayList>
+    <image id="n48_k15r" name="n48" src="o2xzdu" fileName="res/support.png" xy="0,0"/>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920">
+  <displayList>
+    <component id="n0_hsz8" name="com_game" src="q6fzf4" fileName="com/Com_layer.xml" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n1_hsz8" name="com_popup" src="q6fzf4" fileName="com/Com_layer.xml" xy="0,0" touchable="false">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+  </displayList>
+</component>

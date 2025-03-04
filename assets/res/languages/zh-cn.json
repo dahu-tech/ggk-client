@@ -1,0 +1,14 @@
+{
+  "id": "zh-cn",
+  "txt": {
+    "errorcode1": "423",
+    "errorcode2": "asdf",
+    "errorcode3": "asdf",
+    "reach_max_bet": "asdf"
+  },
+  "label": {
+    "pop_up_title": "11",
+    "max_stake": "222",
+    "rule_desc": "333"
+  }
+}

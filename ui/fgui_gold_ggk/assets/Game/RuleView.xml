@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1280">
+  <controller name="c1" pages="1,1,2,2" selected="1"/>
+  <displayList>
+    <graph id="n9_tp5m" name="n9" xy="10,20" size="700,1240" type="rect" lineSize="2" lineColor="#ffb49c3c" fillColor="#cc000000" corner="30">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n25_tp5m" name="tf_rule1" xy="30,112" size="660,112" group="n28_tp5m" customData="rule_1" fontSize="24" color="#dddddd" leading="10" autoSize="height" text="Scratch the Lucky Star to try to win prizes. In the game, just match a winnning number to win the corresponding amount below the number"/>
+    <loader id="n27_tp5m" name="img_rule_1" xy="90,265" size="535,735" group="n28_tp5m" url="ui://1as7p2p8ojgwik" clearOnPublish="true">
+      <relation target="n25_tp5m" sidePair="top-bottom"/>
+    </loader>
+    <group id="n28_tp5m" name="group1" xy="30,112" size="660,888" advanced="true">
+      <gearDisplay controller="c1" pages="1"/>
+    </group>
+    <graph id="n116_n832" name="n116" xy="27,114" size="670,1020" group="n32_tp5m" type="rect" lineSize="2" lineColor="#ff9a8826" fillColor="#ff33270d" corner="30"/>
+    <text id="n118_n832" name="tf_rule2" xy="134,243" size="460,34" group="n32_tp5m" visible="false" customData="rule_2" fontSize="24" color="#dddddd" leading="10" autoSize="height" text="For every 10 tickets, get one for free."/>
+    <text id="n121_n832" name="tf_rule3" xy="62,919" size="596,73" group="n32_tp5m" customData="rule_3" fontSize="24" color="#dddddd" leading="10" autoSize="height" text="Light up the 5 winning numbers and get the extra JACKPOT big prize!">
+      <relation target="n130_ojgw" sidePair="top-bottom"/>
+    </text>
+    <loader id="n129_ojgw" name="img_rule_2" xy="135,141" size="459,96" group="n32_tp5m" visible="false" url="ui://1as7p2p8ojgwil" clearOnPublish="true">
+      <relation target="n25_tp5m" sidePair="top-bottom"/>
+    </loader>
+    <loader id="n130_ojgw" name="img_rule_3" xy="196,228" size="328,662" group="n32_tp5m" url="ui://1as7p2p8ojgwim" fill="scale" clearOnPublish="true">
+      <relation target="n118_n832" sidePair="top-bottom"/>
+    </loader>
+    <group id="n32_tp5m" name="group2" xy="27,114" size="670,1020" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+    <component id="n77_tp5m" name="btn_close" src="n832g9" fileName="com/Btn_back_to_game.xml" xy="235,1165" size="254,83" group="n86_tp5m"/>
+    <component id="n78_tp5m" name="btn_preview" src="n832ga" fileName="com/Btn_page.xml" xy="173,1174" size="56,63" group="n86_tp5m"/>
+    <component id="n79_tp5m" name="btn_next" src="n832ga" fileName="com/Btn_page.xml" xy="548,1174" size="56,63" group="n86_tp5m" scale="-1,1"/>
+    <component id="n80_tp5m" name="com_page_index0" src="n832gb" fileName="com/Com_page_index.xml" xy="345,1142" size="10,10" group="n86_tp5m"/>
+    <component id="n83_tp5m" name="com_page_index1" src="n832gb" fileName="com/Com_page_index.xml" xy="365,1142" size="10,10" group="n86_tp5m"/>
+    <group id="n86_tp5m" name="n86" xy="173,1142" size="431,106" advanced="true">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </group>
+    <text id="n128_ojgw" name="tf_rule_title" xy="33,43" size="660,54" customData="rule_title" fontSize="40" color="#dddddd" align="center" vAlign="middle" leading="10" autoSize="height" bold="true" text="Instructions"/>
+  </displayList>
+</component>

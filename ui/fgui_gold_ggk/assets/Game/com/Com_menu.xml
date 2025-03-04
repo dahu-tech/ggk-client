@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="192,280">
+  <displayList>
+    <graph id="n53_k15r" name="n53" xy="0,0" size="192,280" type="rect" lineColor="#cc000000" fillColor="#cc000000" corner="30"/>
+    <component id="n46_k15r" name="btn_rules" src="o2xzdv" fileName="com/Btn_rules.xml" xy="10,20"/>
+    <component id="n47_k15r" name="btn_sound" src="o2xzdw" fileName="com/Btn_sound.xml" xy="10,108"/>
+    <component id="n48_k15r" name="btn_support" src="o2xzdx" fileName="com/Btn_support.xml" xy="10,193"/>
+  </displayList>
+</component>

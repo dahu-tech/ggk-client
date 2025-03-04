@@ -1,0 +1,12 @@
+{
+  "name": "xxyy-cocos",
+  "uuid": "1f67b66a-1d23-44bc-89c7-adad4b7e1ed9",
+  "version": "3.6.2",
+  "creator": {
+    "version": "3.6.2"
+  },
+  "dependencies": {
+    "@xxyy/app": "0.0.62",
+    "@xxyy/core": "0.0.40"
+  }
+}

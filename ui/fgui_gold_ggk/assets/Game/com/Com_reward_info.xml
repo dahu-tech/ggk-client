@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="520,60">
+  <displayList>
+    <image id="n15_lwfq" name="n15" src="lwfq4e" fileName="res/win tb.png" xy="124,0">
+      <relation target="n18_lwfq" sidePair="right-left"/>
+    </image>
+    <text id="n18_lwfq" name="tf_win" xy="351,33" pivot="0.5,0.5" anchor="true" size="24,52" scale="1.2,1.2" font="ui://1as7p2p8imlc3q" fontSize="48" color="#ffffff" align="center" vAlign="middle" letterSpacing="3" strokeColor="#000000" strokeSize="5" text="0"/>
+  </displayList>
+</component>

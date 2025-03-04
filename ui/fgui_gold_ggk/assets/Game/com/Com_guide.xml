@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1136">
+  <displayList>
+    <graph id="n0_gvkl" name="n0" xy="0,0" size="720,1136" type="rect" lineColor="#b2000000" fillColor="#b2000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n1_gvkl" name="n1" src="gvkl8p" fileName="com/Com_arrow.xml" xy="13,945">
+      <relation target="" sidePair="bottom-bottom"/>
+    </component>
+    <image id="n2_9mzg" name="n2" src="k15r5n" fileName="res/KSXZTS2.png" xy="360,888" pivot="0.5,0.5" anchor="true">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </image>
+  </displayList>
+</component>

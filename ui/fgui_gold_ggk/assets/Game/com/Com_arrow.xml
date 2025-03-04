@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="97,192">
+  <displayList>
+    <image id="n1_gvkl" name="n1" src="gvkl8m" fileName="res/jiantou.png" xy="0,0"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n1_gvkl" tween="true" startValue="0,0" endValue="0,60" duration="6"/>
+    <item time="6" type="XY" target="n1_gvkl" tween="true" startValue="0,60" endValue="0,0" duration="6"/>
+  </transition>
+</component>

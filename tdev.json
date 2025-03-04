@@ -1,0 +1,53 @@
+{
+  "options": {
+    "LogLevel": 2, //1-debug 2-info 3-warn 4-error
+    "DefaultArgs": ""
+  },
+  "ecmds": [
+    {
+      "Verb": "l",
+      "Options": "ecmd-list",
+      "Desc": "显示简易命令列表"
+    },
+    {
+      "Verb": "lang-excel",
+      "Options": "cocos-langs-excel -o ./assets/res/languages/langs.xlsx -t ./assets/res/languages/langs.json -m 1 -l ./assets/res -d en",
+      "Desc": "根据langs.json和包含$LANG_INFO的.ts生成langs.xlsx"
+    },
+    {
+      "Verb": "lang-json", 
+      "Options": "cocos-langs-json -o ./assets/res/languages/ -e ./assets/res/languages/langs.xlsx",
+      "Desc": "根据langs.xlsx生成如: en.json"
+    },
+    {
+      "Verb": "api",
+      "Options": "swagger-to-ts -i 1 -p http://192.168.1.128:7002/swagger/v1/swagger.json -o ./assets/script/net/game -n GoldGgk",
+      "Desc": "swagger生成ts"
+    },
+    {
+      "Verb": "xls-demo",
+      "Options": "excel-ts-demo -o ./assets/script/3rd",
+      "Desc": "swagger生成ts"
+    },
+    {
+      "Verb": "ws", // 包含-d表示true
+      "Options": "netty-js -s ws://10.0.0.102:30101 -p demo -o ./assets/script/3rd -d",
+      "Desc": "netty生成proto和cmds"
+    },
+    {
+      "Verb": "xls",
+      "Options": "excel-ts -f ./assets/script/3rd/xls.xlsx -o ./assets/script/3rd -n xls -i lang_lables",
+      "Desc": "swagger生成ts"
+    },
+    {
+      "Verb": "res",
+      "Options": "cocos-res -p ./assets/res -l zh-cn -o ./assets/res/languages -f ./assets/script/3rd/xls.xlsx -s lang_lables",
+      "Desc": "生成languages"
+    },
+    {
+      "Verb": "all",
+      "Options": "ecmd-batch --verbs ws,api,xls,res",
+      "Desc": "执行批处理"
+    }
+  ]
+}

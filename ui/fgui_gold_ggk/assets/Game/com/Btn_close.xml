@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="330,91" pivot="0.5,0.5" extention="Button">
+  <displayList>
+    <image id="n2_k15r" name="n2" src="ihx9ce" fileName="res/back to game.png" xy="0,0"/>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+</component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="580,77">
+  <displayList>
+    <image id="n60_pkbd" name="n60" src="evse5" fileName="res/圆角矩形 7@2x.png" xy="0,0" size="580,77">
+      <relation target="n61_pkbd" sidePair="width-width"/>
+    </image>
+    <text id="n61_pkbd" name="tf_text" xy="46,13" size="487,50" font="Microsoft YaHei" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" singleLine="true" autoClearText="true" text="解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合解锁组合"/>
+  </displayList>
+  <relation target="n61_pkbd" sidePair="width-width"/>
+  <transition name="t0">
+    <item time="0" type="Alpha" value="1"/>
+    <item time="18" type="Alpha" tween="true" startValue="1" endValue="0" duration="6"/>
+  </transition>
+</component>

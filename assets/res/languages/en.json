@@ -1,0 +1,21 @@
+{
+  "id": "en",
+  "txt": {
+    "errorcode1": "token error",
+    "errorcode2": "internal server error",
+    "errorcode3": "not enough money",
+    "errorcode4": "network error, pls check your network",
+    "errorcode5": "init error, pls try again later",
+    "select_bet": "Please select bet first",
+    "not_enough_money": "not enough balance!",
+    "win_up_to": "Win_up_to_{1}"
+  },
+  "label": {
+    "auto_spin_title": "Autoplay Options Number Of Bets",
+    "totle_bet_title": "Total Bet",
+    "rule_1": "Scratch the Lucky Star to try to win prizes. In the game, just match a winnning number to win the corresponding amount below the number",
+    "rule_2": "For every 10 tickets, get one for free.",
+    "rule_3": "Light up the 5 winning numbers and get the extra JACKPOT big prize!",
+    "rule_title": "Instructions"
+  }
+}

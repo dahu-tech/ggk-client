@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="161,163">
+  <controller name="c1" pages="0,spin,1,stop,2,free_spin" selected="0"/>
+  <displayList>
+    <component id="n12_ihx9" name="btn_spin" src="ihx9bg" fileName="com/Btn_spin.xml" xy="0,0">
+      <gearDisplay controller="c1" pages="0"/>
+    </component>
+    <component id="n13_ihx9" name="btn_stop" src="ihx9bw" fileName="com/Btn_stop.xml" xy="0,0">
+      <gearDisplay controller="c1" pages="1"/>
+    </component>
+    <component id="n14_ihx9" name="btn_free" src="ihx9c8" fileName="com/Btn_free.xml" xy="0,0">
+      <gearDisplay controller="c1" pages="2"/>
+    </component>
+    <loader3D id="n15_su1u" name="n15" xy="-243,-735" size="648,619" url="ui://1as7p2p8su1ui0" animation="reveal_idle" skin="" loop="true"/>
+    <loader3D id="n16_ojgw" name="ani_free" xy="-163,-617" size="79,89" visible="false" url="ui://1as7p2p8ojgwi4" animation="3_reveal_show" skin=""/>
+  </displayList>
+</component>

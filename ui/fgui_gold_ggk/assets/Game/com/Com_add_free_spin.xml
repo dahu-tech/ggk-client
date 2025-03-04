@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="233,190">
+  <displayList>
+    <image id="n70_o2xz" name="n70" src="o2xzeb" fileName="res/地板.png" xy="0,0"/>
+    <text id="n71_o2xz" name="tf_times" xy="116,118" pivot="0.5,0.5" anchor="true" size="75,66" font="ui://1as7p2p8o2xzen" fontSize="57" color="#ffffff" align="center" vAlign="middle" letterSpacing="-5" text="99"/>
+  </displayList>
+</component>

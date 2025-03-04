@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="131,40">
+  <controller name="c1" pages="0,mini,1,minor,2,major,3,grand" selected="0"/>
+  <displayList>
+    <image id="n108_ojgw" name="n108" src="r2engk" fileName="res/grand bt.png" xy="2,0">
+      <gearDisplay controller="c1" pages="3"/>
+    </image>
+    <image id="n109_ojgw" name="n109" src="r2engl" fileName="res/major bt.png" xy="0,1">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <image id="n110_ojgw" name="n110" src="r2engn" fileName="res/minor bt.png" xy="0,1">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <image id="n111_ojgw" name="n111" src="r2engm" fileName="res/mini bt.png" xy="17,0">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+  </displayList>
+</component>

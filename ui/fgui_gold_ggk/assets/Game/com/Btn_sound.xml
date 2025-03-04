@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,71" extention="Button">
+  <controller name="c1" pages="0,开,1,关" selected="0"/>
+  <displayList>
+    <image id="n47_k15r" name="n47" src="o2xzds" fileName="res/sound 1.png" xy="0,0">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n48_o2xz" name="n48" src="o2xzdt" fileName="res/sound 2.png" xy="0,0">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+</component>

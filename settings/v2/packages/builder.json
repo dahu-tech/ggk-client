@@ -1,0 +1,21 @@
+{
+  "textureCompressConfig": {
+    "userPreset": {
+      "33UOOw+UpAUpAmIcPgNUuD": {
+        "name": "xxyy",
+        "options": {
+          "web": {
+            "png": {
+              "quality": 80
+            }
+          }
+        }
+      }
+    }
+  },
+  "splash-setting": {
+    "url": "D:\\project_zhixinkeji\\logo\\logo_pt.png",
+    "displayRatio": 1,
+    "displayWatermark": false
+  }
+}

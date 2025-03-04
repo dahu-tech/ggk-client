@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920">
+  <displayList>
+    <image id="n3_lzwb" name="n3" src="m01611" fileName="res/MovieClip3_0003.png" xy="540,960" pivot="0.5,0.5" anchor="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Rotation" target="n3_lzwb" tween="true" startValue="0" endValue="360" duration="48" ease="Linear" repeat="-1"/>
+  </transition>
+</component>

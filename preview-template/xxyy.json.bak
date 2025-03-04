@@ -1,0 +1,56 @@
+{
+  "appId": "zp",
+  "version": "0.0.1",
+  "platformCode": "own",
+  "timerManagerEnable": true,
+  "timerManagerInterval": 500,
+  "languages": [
+    {
+      "key": "zh-cn",
+      "title": "简体中文"
+    },
+    {
+      "key": "zh-tw",
+      "title": "繁体中文"
+    },
+    {
+      "key": "en",
+      "title": "english"
+    }
+  ],
+  "env": "dev",
+  /*根据env配置获取子配置*/
+  "configs": [
+    {
+      "name": "dev",
+      "logLevel": 0, // 0-DEBUG 1-INFO 2-WARN 3-ERROR
+      "logRspMode": 0, //日志上传模式 0-None 1-Error 2-All
+      "logRspUserIds": [], //允许上报的userId
+      "stopwatchEnable": true,
+      "stopwatchMilliseconds": 500,
+      "ignoreSteps": [
+        1
+      ], //可忽略的调试步骤。0-CheckStaging 1-UseAuthApi 2-LogClient
+      "apiUrl": "http://10.0.0.102:10101/api",
+      //"apiUrl": "http://localhost:5075/api",
+      "apiTimeout": 1800000000, //api请求过期时间，调试
+      "refreshToken": false,
+      "platformId": 0,
+      "appUrls": [
+        "ws://10.0.0.102:30101"
+        //"ws://localhost"
+      ],
+      "heartInterval": 0, //心跳间隔。0-无心跳
+      "userId": "50a42520-1612-4f18-8058-2ae636f15b86",
+      "isDemo": true // true: 不调用第三方扣减
+    },
+    {
+      "name": "staging",
+      "runMode": 1 // 0-普通 1-仿真
+    },
+    {
+      "name": "bangcasino",
+      "logLevel": 3 // 0-DEBUG 1-INFO 2-WARN 3-ERROR
+    }
+  ]
+}

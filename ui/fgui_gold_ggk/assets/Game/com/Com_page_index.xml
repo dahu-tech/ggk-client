@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="10,10">
+  <controller name="c1" pages="0,未选中,1,选中" selected="0"/>
+  <displayList>
+    <graph id="n82_tp5m" name="n82" xy="0,0" size="10,10" type="eclipse" fillColor="#ff7d7d7d">
+      <gearDisplay controller="c1" pages="0"/>
+    </graph>
+    <graph id="n80_tp5m" name="n80" xy="0,0" size="10,10" type="eclipse">
+      <gearDisplay controller="c1" pages="1"/>
+    </graph>
+  </displayList>
+</component>

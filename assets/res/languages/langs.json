@@ -1,0 +1,10 @@
+{
+	"errorcode1": "token error",
+	"errorcode2": "internal server error",
+	"errorcode3": "not enough money",
+	"errorcode4": "network error, pls check your network",
+	"errorcode5": "init error, pls try again later",
+	"select_bet": "Please select bet first",
+	"not_enough_money": "not enough balance!",
+	"win_up_to": "win_up_to_{1}"
+}

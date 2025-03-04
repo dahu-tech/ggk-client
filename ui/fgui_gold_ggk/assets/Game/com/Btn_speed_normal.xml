@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="72,72" pivot="0.5,0.5" extention="Button">
+  <displayList>
+    <image id="n56_ihx9" name="btn_speed_normal" src="mtrugr" fileName="res/ks.png" xy="0,0"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue=".8"/>
+</component>

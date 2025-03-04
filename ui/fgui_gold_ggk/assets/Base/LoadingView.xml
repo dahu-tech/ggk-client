@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1280">
+  <displayList>
+    <image id="n0_lwfq" name="img_bg" src="dtysfr" fileName="res/Lotto-Scratchcard-loading.jpg" xy="360,640" pivot="0.5,0.5" anchor="true" size="720,1680">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <component id="n2_lwfq" name="pb_loading" src="lwfqf9" fileName="com/Pb_loading.xml" xy="67,1073">
+      <relation target="" sidePair="center-center,middle-middle%"/>
+      <ProgressBar max="100"/>
+    </component>
+  </displayList>
+</component>

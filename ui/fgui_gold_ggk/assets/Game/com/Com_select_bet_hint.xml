@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="504,67">
+  <displayList>
+    <image id="n52_k15r" name="n52" src="k15r5m" fileName="res/KSXZTS1.png" xy="0,0"/>
+    <image id="n53_k15r" name="n53" src="k15r5n" fileName="res/KSXZTS2.png" xy="0,0"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n53_k15r" value="1"/>
+    <item time="12" type="Alpha" target="n53_k15r" value="0"/>
+    <item time="24" type="Alpha" target="n53_k15r" value="1"/>
+    <item time="36" type="Alpha" target="n53_k15r" value="0"/>
+    <item time="48" type="Alpha" target="n53_k15r" value="1"/>
+  </transition>
+</component>

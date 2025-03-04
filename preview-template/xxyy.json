@@ -1,0 +1,56 @@
+{
+  "appId": "gold_ggk", // 应用程序ID
+  "appType": 2, //应用类型：1-大厅 2-游戏
+  "appLink": 1, //应用连接方式: 1-api+ticket 2-ws
+  "operatorId": "", //运营商ID（游戏不要设置）
+  "version": "0.0.2",
+  "languages": [
+    {
+      "id": "en",
+      "title": "english"
+    },
+    {
+      "id": "es",
+      "title": "西班牙语"
+    },
+    {
+      "id": "pt",
+      "title": "葡萄牙语"
+    }
+  ],
+  "logLevel": 2, // 0-DEBUG 1-INFO 2-WARN 3-ERROR 4-NONE
+  "timerManagerEnable": true, // timerManager是否开启
+  "timerManagerInterval": 500,
+  "stopwatchEnable": true,
+  "stopwatchMilliseconds": 500,
+  "env": "qa",
+  "configs": [
+    {
+      "name": "dev",
+      "logLevel": 0,
+      // "xxyyUrl": "http://192.168.1.121:9009", // xxyy平台api的url，如果空，则使用appUrl和userId直接连接游戏服务
+      "xxyyTimeout": 1800000,
+      "appUrl": "http://192.168.1.121:7002", // 游戏服务url，调试时可输入有效url，可直接连接游戏服务
+      "userId": "003a20c1-aef8-4154-90f6-57be6f2db62c", // 调试时如果其他验证信息（如ticket）为空，则直接使用其直接连接游戏服务。
+      "imgBaseUrl": "", //图片地址基础url
+      "lobbyUrl": "",
+      "depositUrl": ""
+    },
+    {
+      "name": "qa",
+      "logLevel": 0,
+      "xxyyUrl": "http://192.168.1.128:9009", // xxyy平台api的url，如果空，则使用appUrl和userId直接连接游戏服务
+      "xxyyTimeout": 1800000,
+      "imgBaseUrl": ""//图片地址基础url
+    },
+    {
+      "name": "prod",
+      "xxyyUrl": "/xxyy",
+      "operatorId": "",
+      "imgBaseUrl": "https://upload.777gana.com",
+      "appStatus": 0, //应用状态0-正常1-维护
+      "appMaintText": "2020-01-01 10:00:00 - 2020-01-01 12:00:00" //系统维护时间文本，如：2020-01-01 10:00:00 - 2020-01-01 12:00:00
+    }
+  ]
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="650,60">
+  <displayList>
+    <text id="n6_f5nv" name="tf_id" xy="88,34" pivot="0.5,0.5" anchor="true" size="106,42" customData="max_stake" fontSize="30" color="#dddddd" align="center" vAlign="middle" text="123456"/>
+    <text id="n7_f5nv" name="tf_win" xy="322,34" pivot="0.5,0.5" anchor="true" size="106,42" customData="max_stake" fontSize="30" color="#ffd800" align="center" vAlign="middle" text="123456"/>
+    <text id="n8_f5nv" name="tf_date" xy="555,34" pivot="0.5,0.5" anchor="true" size="106,42" customData="max_stake" fontSize="30" color="#dddddd" align="center" vAlign="middle" text="123456"/>
+    <graph id="n9_f5nv" name="n9" xy="0,70" size="650,2" type="rect" lineColor="#ff6b6b6b" fillColor="#ff6b6b6b" corner="30"/>
+  </displayList>
+</component>

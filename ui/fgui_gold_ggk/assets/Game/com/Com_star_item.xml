@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="31,29">
+  <displayList>
+    <loader3D id="n121_ojgw" name="ani" xy="-227,-24" size="79,89" url="ui://1as7p2p8ojgwi4" animation="idle1" skin="" loop="true"/>
+  </displayList>
+</component>

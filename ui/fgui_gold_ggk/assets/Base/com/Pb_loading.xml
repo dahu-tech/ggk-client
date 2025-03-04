@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="604,30" extention="ProgressBar">
+  <displayList>
+    <image id="n2_lwfq" name="n2" src="dtysfq" fileName="res/jdtd.png" xy="0,0"/>
+    <image id="n3_lwfq" name="bar" src="dtysfp" fileName="res/jdt.png" xy="12,8"/>
+    <text id="n4_lwfq" name="n4" xy="197,43" size="109,34" fontSize="24" color="#dfb32e" align="center" vAlign="middle" strokeColor="#000000" strokeSize="5" text="LOADING"/>
+    <text id="n5_lwfq" name="title" xy="324,43" size="40,34" fontSize="24" color="#dfb32e" vAlign="middle" strokeColor="#000000" strokeSize="5" text="1%"/>
+  </displayList>
+  <ProgressBar/>
+</component>

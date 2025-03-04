@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="1as7p2p8">
+  <resources>
+    <image id="r877q" name="MENU.png" path="/res/"/>
+    <image id="r877w" name="充值.png" path="/res/"/>
+    <image id="r8771l" name="返回.png" path="/res/"/>
+    <image id="r8771o" name="顶部栏.png" path="/res/"/>
+    <component id="r8771p" name="Btn_back.xml" path="/com/"/>
+    <component id="r8771q" name="Btn_recharge.xml" path="/com/"/>
+    <component id="r8771r" name="Btn_menu.xml" path="/com/"/>
+    <component id="imlc30" name="Com_jp_detail.xml" path="/com/"/>
+    <image id="bp0o45" name="合成 拷贝 4@2x.png" path="/res/" scale="9grid" scale9grid="61,18,122,36"/>
+    <component id="bp0o46" name="Btn_confirm.xml" path="/com/"/>
+    <image id="lwfq4e" name="win tb.png" path="/res/"/>
+    <component id="k15r5v" name="Btn_close.xml" path="/com/"/>
+    <component id="k15r5x" name="Com_select_bet_hint.xml" path="/com/"/>
+    <component id="k15r60" name="Btn_ok.xml" path="/com/"/>
+    <image id="k15r64" name="金币icon.png" path="/res/"/>
+    <component id="k15r65" name="Com_menu.xml" path="/com/"/>
+    <component id="k15r6a" name="AniContainer.xml" path="/com/"/>
+    <component id="ruil7l" name="Com_reward_info.xml" path="/com/"/>
+    <image id="f5nv7s" name="DATE.png" path="/res/"/>
+    <image id="f5nv7t" name="jackpot list.png" path="/res/"/>
+    <image id="f5nv7u" name="player.png" path="/res/"/>
+    <component id="f5nv7x" name="Com_jp_history_item.xml" path="/com/"/>
+    <component id="gvkl8l" name="Com_guide.xml" path="/com/"/>
+    <component id="gvkl8p" name="Com_arrow.xml" path="/com/"/>
+    <component id="harq8x" name="GgkView.xml" path="/" exported="true"/>
+    <image id="ihx98z" name="auto-button-disable.png" path="/res/"/>
+    <image id="ihx996" name="info-button.png" path="/res/"/>
+    <image id="ihx99c" name="tubo-button-X1.png" path="/res/"/>
+    <image id="ihx99d" name="tubo-button-X2.png" path="/res/"/>
+    <image id="ihx99e" name="js 0.png" path="/bmfont/jssz/"/>
+    <image id="ihx99n" name="epic win.png" path="/res/"/>
+    <image id="ihx99q" name="big win.png" path="/res/"/>
+    <image id="ihx99s" name="墨西哥老虎机游戏界面1.png" path="/design/"/>
+    <image id="ihx99u" name="墨西哥老虎机游戏界面1 - 下注界面.png" path="/design/"/>
+    <image id="ihx9a4" name="super win.png" path="/res/"/>
+    <image id="ihx9a9" name="please choose the bet amount.png" path="/res/"/>
+    <image id="ihx9aa" name="please choose autospin times.png" path="/res/"/>
+    <image id="ihx9ad" name="墨西哥老虎机游戏界面1 - AUTO弹框.png" path="/design/"/>
+    <image id="ihx9ae" name="win.png" path="/bmfont/win/" disableTrim="true"/>
+    <image id="ihx9ai" name="js xsd.png" path="/bmfont/jssz/"/>
+    <image id="ihx9aj" name="js qff.png" path="/bmfont/jssz/"/>
+    <image id="ihx9ak" name="js 9.png" path="/bmfont/jssz/"/>
+    <image id="ihx9am" name="js 8.png" path="/bmfont/jssz/"/>
+    <image id="ihx9an" name="js 6.png" path="/bmfont/jssz/"/>
+    <image id="ihx9ao" name="js 5.png" path="/bmfont/jssz/"/>
+    <image id="ihx9ap" name="js 4.png" path="/bmfont/jssz/"/>
+    <image id="ihx9aq" name="js 3.png" path="/bmfont/jssz/"/>
+    <image id="ihx9ar" name="js 2.png" path="/bmfont/jssz/"/>
+    <image id="ihx9as" name="js 1.png" path="/bmfont/jssz/"/>
+    <image id="ihx9at" name="js 7.png" path="/bmfont/jssz/"/>
+    <image id="ihx9au" name="xiaoshudian.png" path="/bmfont/win/"/>
+    <image id="ihx9ax" name="win 9.png" path="/bmfont/win/"/>
+    <image id="ihx9ay" name="win 8.png" path="/bmfont/win/"/>
+    <image id="ihx9az" name="win 7.png" path="/bmfont/win/"/>
+    <image id="ihx9b0" name="win 6.png" path="/bmfont/win/"/>
+    <image id="ihx9b1" name="win 5.png" path="/bmfont/win/"/>
+    <image id="ihx9b2" name="win 4.png" path="/bmfont/win/"/>
+    <image id="ihx9b4" name="win 3.png" path="/bmfont/win/"/>
+    <image id="ihx9b5" name="win 1.png" path="/bmfont/win/"/>
+    <image id="ihx9b6" name="win 0.png" path="/bmfont/win/"/>
+    <image id="ihx9b7" name="qianfenfu.png" path="/bmfont/win/"/>
+    <image id="ihx9bb" name="win 2.png" path="/bmfont/win/"/>
+    <image id="ihx9bc" name="wuxianfuhao.png" path="/res/"/>
+    <font id="ihx9bd" name="FontWin.fnt" path="/bmfont/" exported="true"/>
+    <font id="ihx9be" name="FontJp.fnt" path="/bmfont/" exported="true"/>
+    <image id="ihx9bf" name="ok.png" path="/res/"/>
+    <component id="ihx9bg" name="Btn_spin.xml" path="/com/"/>
+    <component id="ihx9bh" name="Btn_paytable.xml" path="/com/"/>
+    <image id="ihx9bi" name="墨西哥财富操作栏.png" path="/design/"/>
+    <component id="ihx9bj" name="Btn_bet.xml" path="/com/"/>
+    <component id="ihx9bp" name="Com_lottory_num.xml" path="/com/"/>
+    <component id="ihx9bq" name="Btn_auto.xml" path="/com/"/>
+    <component id="ihx9br" name="Com_auto.xml" path="/com/"/>
+    <component id="ihx9bs" name="Com_speed.xml" path="/com/"/>
+    <component id="ihx9bt" name="Btn_speed_fast.xml" path="/com/"/>
+    <component id="ihx9bu" name="Btn_speed_normal.xml" path="/com/"/>
+    <component id="ihx9bv" name="Com_reveal.xml" path="/com/"/>
+    <component id="ihx9bw" name="Btn_stop.xml" path="/com/"/>
+    <image id="ihx9c7" name="free-spin-button.png" path="/res/"/>
+    <component id="ihx9c8" name="Btn_free.xml" path="/com/"/>
+    <component id="ihx9ca" name="Com_unit.xml" path="/com/"/>
+    <component id="ihx9cb" name="Com_scroller.xml" path="/com/"/>
+    <component id="ihx9cc" name="Com_game.xml" path="/com/"/>
+    <image id="ihx9cd" name="back to game anxia.png" path="/res/"/>
+    <image id="ihx9ce" name="back to game.png" path="/res/"/>
+    <component id="ihx9cp" name="Com_unit_group.xml" path="/com/"/>
+    <component id="f0bscq" name="Com_bet_item.xml" path="/com/"/>
+    <component id="f0bscr" name="Com_bet_list.xml" path="/com/"/>
+    <component id="f0bscs" name="Com_auto_list.xml" path="/com/"/>
+    <image id="f0bsct" name="img_black_bg.png" path="/res/" scale="9grid" scale9grid="1,1,1,1"/>
+    <component id="f0bscu" name="Btn_stop_auto.xml" path="/com/"/>
+    <component id="f0bscw" name="Com_paytable_grid.xml" path="/com/"/>
+    <component id="f0bscx" name="Com_paytable_item.xml" path="/com/"/>
+    <component id="f0bscy" name="Btn_balls.xml" path="/com/"/>
+    <component id="tyhjda" name="Com_ani_container.xml" path="/com/"/>
+    <component id="n3endc" name="Com_jp_scroller.xml" path="/com/"/>
+    <component id="n3endf" name="Com_jp_game.xml" path="/com/"/>
+    <component id="qjgqdh" name="RewardView.xml" path="/" exported="true"/>
+    <image id="qjgqdj" name="jsdk.png" path="/res/"/>
+    <component id="o2xzdq" name="JpRewardView.xml" path="/" exported="true"/>
+    <image id="o2xzdr" name="rules.png" path="/res/"/>
+    <image id="o2xzds" name="sound 1.png" path="/res/"/>
+    <image id="o2xzdt" name="sound 2.png" path="/res/"/>
+    <image id="o2xzdu" name="support.png" path="/res/"/>
+    <component id="o2xzdv" name="Btn_rules.xml" path="/com/"/>
+    <component id="o2xzdw" name="Btn_sound.xml" path="/com/"/>
+    <component id="o2xzdx" name="Btn_support.xml" path="/com/"/>
+    <image id="o2xzdy" name="bingo.png" path="/res/"/>
+    <image id="o2xze0" name="collect.png" path="/res/"/>
+    <image id="o2xze1" name="jstk.png" path="/res/"/>
+    <image id="o2xze2" name="paytable.png" path="/res/"/>
+    <image id="o2xze3" name="skip.png" path="/res/"/>
+    <component id="o2xze4" name="Btn_collect.xml" path="/com/"/>
+    <misc id="o2xze5" name="game2_jinbi.atlas" path="/ani/jinbi/"/>
+    <image id="o2xze6" name="game2_jinbi.png" path="/ani/jinbi/"/>
+    <spine id="o2xze9" name="game2_jinbi.json" path="/ani/jinbi/" width="720" height="1280" require="o2xze5,o2xze6" atlasNames="game2_jinbi" anchor="360,640"/>
+    <component id="o2xzep" name="Com_add_free_spin.xml" path="/com/"/>
+    <component id="o2xzet" name="Com_effect.xml" path="/com/"/>
+    <component id="o2xzev" name="Com_unit_effect.xml" path="/com/"/>
+    <image id="o2xzfi" name="bj.jpg" path="/res/"/>
+    <component id="o2xzfq" name="Com_unit_free_spin_num.xml" path="/com/"/>
+    <component id="nkutfr" name="Btn_skip.xml" path="/com/"/>
+    <component id="n832g8" name="RuleView.xml" path="/" exported="true"/>
+    <component id="n832g9" name="Btn_back_to_game.xml" path="/com/"/>
+    <component id="n832ga" name="Btn_page.xml" path="/com/"/>
+    <component id="n832gb" name="Com_page_index.xml" path="/com/"/>
+    <image id="n832gc" name="fanyelv.png" path="/res/"/>
+    <image id="j4c8gd" name="bonus game bt.png" path="/res/"/>
+    <image id="j4c8gh" name="gx.png" path="/res/"/>
+    <image id="j4c8gi" name="jsk.png" path="/res/"/>
+    <image id="r2engk" name="grand bt.png" path="/res/"/>
+    <image id="r2engl" name="major bt.png" path="/res/"/>
+    <image id="r2engm" name="mini bt.png" path="/res/"/>
+    <image id="r2engn" name="minor bt.png" path="/res/"/>
+    <image id="mtrugo" name="auto.png" path="/res/"/>
+    <image id="mtrugq" name="reveal.png" path="/res/"/>
+    <image id="mtrugr" name="ks.png" path="/res/"/>
+    <image id="mtrugs" name="jpcpdt1.png" path="/res/"/>
+    <image id="mtrugt" name="jpcpdt.png" path="/res/"/>
+    <image id="mtrugu" name="jc.png" path="/res/"/>
+    <image id="mtrugv" name="free.png" path="/res/"/>
+    <image id="mtrugw" name="free cp.png" path="/res/"/>
+    <image id="mtrugx" name="cpgk.png" path="/res/"/>
+    <image id="mtrugy" name="cpbmx.png" path="/res/"/>
+    <image id="mtrugz" name="cpbm.png" path="/res/"/>
+    <image id="mtruh0" name="bt.png" path="/res/"/>
+    <image id="mtruh2" name="bet.png" path="/res/"/>
+    <image id="mtruh3" name="auto1.png" path="/res/"/>
+    <image id="mtruh4" name="sm.png" path="/res/"/>
+    <image id="mtruh5" name="xzq.png" path="/res/"/>
+    <image id="mtruh6" name="0.png" path="/bmfont/sz/"/>
+    <image id="mtruh7" name="1.png" path="/bmfont/sz/"/>
+    <image id="mtruh8" name="2.png" path="/bmfont/sz/"/>
+    <image id="mtruh9" name="3.png" path="/bmfont/sz/"/>
+    <image id="mtruha" name="4.png" path="/bmfont/sz/"/>
+    <image id="mtruhb" name="5.png" path="/bmfont/sz/"/>
+    <image id="mtruhc" name="6.png" path="/bmfont/sz/"/>
+    <image id="mtruhd" name="7.png" path="/bmfont/sz/"/>
+    <image id="mtruhe" name="8.png" path="/bmfont/sz/"/>
+    <image id="mtruhf" name="9.png" path="/bmfont/sz/"/>
+    <image id="mtruhg" name="qff.png" path="/bmfont/sz/"/>
+    <image id="mtruhh" name="qian.png" path="/bmfont/sz/"/>
+    <image id="mtruhi" name="cphm0.png" path="/bmfont/cphm/"/>
+    <image id="mtruhj" name="cphm1.png" path="/bmfont/cphm/"/>
+    <image id="mtruhk" name="cphm2.png" path="/bmfont/cphm/"/>
+    <image id="mtruhl" name="cphm3.png" path="/bmfont/cphm/"/>
+    <image id="mtruhm" name="cphm4.png" path="/bmfont/cphm/"/>
+    <image id="mtruhn" name="cphm5.png" path="/bmfont/cphm/"/>
+    <image id="mtruho" name="cphm6.png" path="/bmfont/cphm/"/>
+    <image id="mtruhp" name="cphm7.png" path="/bmfont/cphm/"/>
+    <image id="mtruhq" name="cphm8.png" path="/bmfont/cphm/"/>
+    <image id="mtruhr" name="cphm9.png" path="/bmfont/cphm/"/>
+    <font id="mtruhs" name="FontLottory.fnt" path="/bmfont/" exported="true"/>
+    <component id="mtruht" name="Com_win_num_item.xml" path="/com/"/>
+    <image id="mtruhu" name="lotto.png" path="/res/"/>
+    <image id="mtruhv" name="stop.png" path="/res/"/>
+    <component id="mtruhx" name="Com_lottory_item.xml" path="/com/"/>
+    <misc id="su1uhy" name="lotto_gua.atlas" path="/ani/lotto_gua/"/>
+    <image id="su1uhz" name="lotto_gua.png" path="/ani/lotto_gua/"/>
+    <spine id="su1ui0" name="lotto_gua.json" path="/ani/lotto_gua/" width="648" height="619" require="su1uhy,su1uhz" atlasNames="lotto_gua" anchor="324,281"/>
+    <component id="ojgwi1" name="Com_reward_jp_type.xml" path="/com/"/>
+    <misc id="ojgwi2" name="lotto_jileicao.atlas" path="/ani/lotto_jileicao/"/>
+    <image id="ojgwi3" name="lotto_jileicao.png" path="/ani/lotto_jileicao/"/>
+    <spine id="ojgwi4" name="lotto_jileicao.json" path="/ani/lotto_jileicao/" width="79" height="89" require="ojgwi2,ojgwi3" atlasNames="lotto_jileicao" anchor="243,39"/>
+    <component id="ojgwi5" name="Com_star_item.xml" path="/com/"/>
+    <component id="ojgwi6" name="GoldAniView.xml" path="/" exported="true"/>
+    <misc id="ojgwi7" name="lotto_sj.atlas" path="/ani/lotto_sj/"/>
+    <image id="ojgwi8" name="lotto_sj.png" path="/ani/lotto_sj/"/>
+    <spine id="ojgwi9" name="lotto_sj.json" path="/ani/lotto_sj/" width="1182" height="1672" require="ojgwi7,ojgwi8" atlasNames="lotto_sj" anchor="591,1003"/>
+    <image id="ojgwia" name="zjts.png" path="/res/"/>
+    <image id="ojgwib" name="xsd.png" path="/bmfont/sz/"/>
+    <misc id="ojgwic" name="button_spine.atlas" path="/ani/button_idle/"/>
+    <image id="ojgwid" name="button_spine.png" path="/ani/button_idle/"/>
+    <spine id="ojgwie" name="button_spine.json" path="/ani/button_idle/" width="757" height="478" require="ojgwic,ojgwid" atlasNames="button_spine" anchor="480,-468"/>
+    <image id="ojgwif" name="como jogar.png" path="/res/"/>
+    <image id="ojgwig" name="cpzj.png" path="/res/"/>
+    <image id="ojgwih" name="ks1.png" path="/res/"/>
+    <image id="ojgwii" name="Lotto-Scratchcard-loading.jpg" path="/res/"/>
+    <image id="ojgwij" name="r.png" path="/res/"/>
+    <image id="ojgwik" name="smt1.jpg" path="/res/"/>
+    <image id="ojgwil" name="smt2.jpg" path="/res/"/>
+    <image id="ojgwim" name="smt3.jpg" path="/res/"/>
+    <image id="kqruio" name="good luck.png" path="/bmfont/win/"/>
+    <image id="u4dcip" name="cp skip.png" path="/res/"/>
+  </resources>
+  <publish name="" path="..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\assets\res\game\\script"/>
+</packageDescription>

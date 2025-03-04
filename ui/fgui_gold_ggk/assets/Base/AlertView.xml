@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="720,1280">
+  <controller name="c1" pages="0,提示,1,确认" selected="0"/>
+  <displayList>
+    <graph id="n11_k15r" name="n11" xy="30,444" size="660,390" group="n10_owxi" type="rect" lineColor="#cc000000" fillColor="#cc000000" corner="30"/>
+    <text id="n12_k15r" name="tf_content" xy="60,554" size="600,200" group="n10_owxi" fontSize="30" color="#dddddd" align="center" vAlign="middle" leading="10" autoSize="none" text="INSUFFICIENT AMOUNT&#xA;UNABLE TO CONTINUE&#xA;PLEASE RESTART THE GAME"/>
+    <component id="n3_l2k9" name="btn_close" src="ojei2m" fileName="com/Btn_close.xml" xy="632,458" size="40,40" group="n10_owxi">
+      <gearDisplay controller="c1" pages="1"/>
+    </component>
+    <image id="n13_k15r" name="n13" src="k15rfd" fileName="res/NOTICE.png" xy="287,497" group="n10_owxi"/>
+    <component id="n14_mwq5" name="btn_ok" src="j4c8fo" fileName="com/Btn_ok.xml" xy="279,738" size="163,81" group="n10_owxi" customData="confirm">
+      <gearDisplay controller="c1" pages="0,1"/>
+    </component>
+    <group id="n10_owxi" name="n10" xy="30,444" size="660,390" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

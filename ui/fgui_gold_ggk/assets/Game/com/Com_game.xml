@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="640,384" overflow="hidden">
+  <displayList>
+    <component id="n58_ihx9" name="com_scroller0" src="ihx9cb" fileName="com/Com_scroller.xml" xy="0,0"/>
+    <component id="n73_ihx9" name="com_scroller1" src="ihx9cb" fileName="com/Com_scroller.xml" xy="128,0"/>
+    <component id="n76_ihx9" name="com_scroller4" src="ihx9cb" fileName="com/Com_scroller.xml" xy="512,0"/>
+    <component id="n75_ihx9" name="com_scroller3" src="ihx9cb" fileName="com/Com_scroller.xml" xy="384,0"/>
+    <component id="n74_ihx9" name="com_scroller2" src="ihx9cb" fileName="com/Com_scroller.xml" xy="256,0"/>
+    <image id="n77_pwup" name="img_mask0" src="f0bsct" fileName="res/img_black_bg.png" xy="0,0" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n94_pwup" name="img_mask1" src="f0bsct" fileName="res/img_black_bg.png" xy="0,128" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n95_pwup" name="img_mask2" src="f0bsct" fileName="res/img_black_bg.png" xy="0,256" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n96_pwup" name="img_mask3" src="f0bsct" fileName="res/img_black_bg.png" xy="128,0" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n97_pwup" name="img_mask4" src="f0bsct" fileName="res/img_black_bg.png" xy="128,128" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n98_pwup" name="img_mask5" src="f0bsct" fileName="res/img_black_bg.png" xy="128,256" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n99_pwup" name="img_mask6" src="f0bsct" fileName="res/img_black_bg.png" xy="256,0" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n100_pwup" name="img_mask7" src="f0bsct" fileName="res/img_black_bg.png" xy="256,128" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n101_pwup" name="img_mask8" src="f0bsct" fileName="res/img_black_bg.png" xy="256,256" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n102_pwup" name="img_mask9" src="f0bsct" fileName="res/img_black_bg.png" xy="384,0" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n103_pwup" name="img_mask10" src="f0bsct" fileName="res/img_black_bg.png" xy="384,128" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n104_pwup" name="img_mask11" src="f0bsct" fileName="res/img_black_bg.png" xy="384,256" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n105_pwup" name="img_mask12" src="f0bsct" fileName="res/img_black_bg.png" xy="512,0" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n106_pwup" name="img_mask13" src="f0bsct" fileName="res/img_black_bg.png" xy="512,128" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <image id="n107_pwup" name="img_mask14" src="f0bsct" fileName="res/img_black_bg.png" xy="512,256" size="128,128" group="n93_pwup" visible="false" alpha="0.7"/>
+    <loader3D id="n78_pwup" name="ani_symbol0" xy="64,64" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n79_pwup" name="ani_symbol3" xy="192,64" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n80_pwup" name="ani_symbol6" xy="320,64" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n81_pwup" name="ani_symbol9" xy="448,64" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n82_pwup" name="ani_symbol12" xy="576,64" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n83_pwup" name="ani_symbol1" xy="64,192" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n84_pwup" name="ani_symbol4" xy="192,192" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n85_pwup" name="ani_symbol7" xy="320,192" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n86_pwup" name="ani_symbol10" xy="448,192" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n87_pwup" name="ani_symbol13" xy="576,192" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n88_pwup" name="ani_symbol2" xy="64,320" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n89_pwup" name="ani_symbol5" xy="192,320" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n90_pwup" name="ani_symbol8" xy="320,320" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n91_pwup" name="ani_symbol11" xy="448,320" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <loader3D id="n92_pwup" name="ani_symbol14" xy="576,320" pivot="0.5,0.5" anchor="true" size="131,131" group="n93_pwup" visible="false" url="ui://1as7p2p8o2xzea" animation="10" skin="" loop="true"/>
+    <group id="n93_pwup" name="n93" xy="-1,-1" size="643,387"/>
+  </displayList>
+</component>

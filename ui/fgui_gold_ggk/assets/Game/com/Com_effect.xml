@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="640,384">
+  <displayList>
+    <component id="n20_o2xz" name="ani_effect1" src="o2xzev" fileName="com/Com_unit_effect.xml" xy="64,64"/>
+    <component id="n19_o2xz" name="ani_effect2" src="o2xzev" fileName="com/Com_unit_effect.xml" xy="192,64"/>
+    <component id="n14_o2xz" name="ani_effect3" src="o2xzev" fileName="com/Com_unit_effect.xml" xy="320,64"/>
+    <component id="n17_o2xz" name="ani_effect4" src="o2xzev" fileName="com/Com_unit_effect.xml" xy="448,64"/>
+    <component id="n18_o2xz" name="ani_effect5" src="o2xzev" fileName="com/Com_unit_effect.xml" xy="576,64"/>
+  </displayList>
+</component>

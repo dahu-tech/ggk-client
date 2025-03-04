@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="143,40">
+  <displayList>
+    <text id="n76_o2xz" name="tf_num" xy="0,0" size="143,40" font="ui://1as7p2p8o2xzfp" fontSize="33" color="#ffffff" align="center" vAlign="middle" text="f1"/>
+    <loader3D id="n77_nkut" name="ani" xy="-69,-29" size="280,101" visible="false" url="ui://1as7p2p8nkutfy" animation="animation" skin=""/>
+  </displayList>
+</component>
