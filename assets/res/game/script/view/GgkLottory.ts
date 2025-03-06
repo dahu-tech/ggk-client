@@ -14,120 +14,123 @@ import { GgkWinNumber } from "./GgkWinNumber";
 import { GameStatusEnum } from "../enum/GameStatusEnum";
 import { AudioManager } from "../../../../script/engine/manager/AudioManager";
 import { ResManager } from "../../../../script/engine/manager/ResManager";
+import { EventManager } from "db://assets/script/xx/event/EventManager";
 
-export class GgkLottory{
-    public static readonly ins = new GgkLottory();
+export class GgkLottory {
+  public static readonly ins = new GgkLottory();
 
-    public comLottoryList:UI_Com_lottory_item[] = [];
-    
-    protected view:UI_GgkView;
+  public comLottoryList: UI_Com_lottory_item[] = [];
 
-    private rewardNumIdx:number = 0;
+  protected view: UI_GgkView;
 
-    public init(gameView:UI_GgkView):void
-    {
-        this.view = gameView;
-        
-        xx.eventManager.on(GameEvent.OPEN_LOTTORY, this.onOpenLottory, this);
-        xx.eventManager.on(GameEvent.RESET_GAME, this.onResetGame, this);
-        // xx.eventManager.on(GameEvent.CARD_SHUFFLE_COMPLETE, this.onCardShuffleComplete, this);
+  private rewardNumIdx: number = 0;
 
-        this.comLottoryList = [this.view.m_com_lottory1, this.view.m_com_lottory2, this.view.m_com_lottory3, this.view.m_com_lottory4, this.view.m_com_lottory5, this.view.m_com_lottory6, this.view.m_com_lottory7, this.view.m_com_lottory8, this.view.m_com_lottory9, this.view.m_com_lottory10, this.view.m_com_lottory11, this.view.m_com_lottory12];
-        
-        this.doLogic();
-        
+  public init(gameView: UI_GgkView): void {
+    this.view = gameView;
+
+    EventManager.on(GameEvent.OPEN_LOTTORY, this.onOpenLottory, this);
+    EventManager.on(GameEvent.RESET_GAME, this.onResetGame, this);
+
+    this.comLottoryList = [
+      this.view.m_com_lottory1,
+      this.view.m_com_lottory2,
+      this.view.m_com_lottory3,
+      this.view.m_com_lottory4,
+      this.view.m_com_lottory5,
+      this.view.m_com_lottory6,
+      this.view.m_com_lottory7,
+      this.view.m_com_lottory8,
+      this.view.m_com_lottory9,
+      this.view.m_com_lottory10,
+      this.view.m_com_lottory11,
+      this.view.m_com_lottory12,
+    ];
+
+    this.doLogic();
+  }
+
+  public doLogic(): void {
+    this.view.m_ani_lottory.visible = false;
+    for (let i: number = 0; i < this.comLottoryList.length; i++) {
+      this.comLottoryList[i].m_img_right.visible = false;
+      this.comLottoryList[i].m_c1.selectedIndex = 0;
     }
+  }
 
-    public doLogic():void {
-        this.view.m_ani_lottory.visible = false;
-        for(let i:number = 0; i < this.comLottoryList.length; i ++){
-            this.comLottoryList[i].m_img_right.visible = false;
-            this.comLottoryList[i].m_c1.selectedIndex = 0;
+  private onOpenLottory(): void {
+    this.view.m_ani_lottory.visible = true;
+    (this.view.m_ani_lottory.content as sp.Skeleton).setCompleteListener(this.onLottoryOpened.bind(this));
+    (this.view.m_ani_lottory.content as sp.Skeleton).loop = false;
+    (this.view.m_ani_lottory.content as sp.Skeleton).animation = "show_2";
+    (this.view.m_ani_lottory.content as sp.Skeleton).timeScale = GameData.speedType;
+
+    for (let i: number = 0; i < this.comLottoryList.length; i++) {
+      this.comLottoryList[i].m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardType;
+      this.comLottoryList[i].m_tf_num.text = GameData.betDto.resultInfo.resultNumList[i].num + "";
+      if (GameData.betDto.resultInfo.resultNumList[i].rewardIdx >= 0) {
+        if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
+          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[GameData.betDto.resultInfo.resultNumList[i].rewardIdx] + "").replace(".", ",");
+        } else {
+          this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardIdx;
         }
-        
-    }
-
-    private onOpenLottory():void{
-        this.view.m_ani_lottory.visible = true;
-        (this.view.m_ani_lottory.content as sp.Skeleton).setCompleteListener(this.onLottoryOpened.bind(this));
-        (this.view.m_ani_lottory.content as sp.Skeleton).loop = false;
-        (this.view.m_ani_lottory.content as sp.Skeleton).animation = "show_2";
-        (this.view.m_ani_lottory.content as sp.Skeleton).timeScale = GameData.speedType;
-
-        for(let i:number = 0; i < this.comLottoryList.length; i ++){
-            this.comLottoryList[i].m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardType;
-            this.comLottoryList[i].m_tf_num.text = GameData.betDto.resultInfo.resultNumList[i].num + "";
-            if(GameData.betDto.resultInfo.resultNumList[i].rewardIdx >= 0){
-                if(GameData.betDto.resultInfo.resultNumList[i].rewardType == 1){
-                    this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[GameData.betDto.resultInfo.resultNumList[i].rewardIdx] + "").replace(".", ",");
-                }else{
-                    this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardIdx;
-                }
-            }else{
-                let randomIdx:number = 0;
-                if(GameData.betDto.resultInfo.resultNumList[i].rewardType == 1){
-                    randomIdx = Math.floor(Math.random() * Meta.curChipMeta.betResultList.length);
-                    this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[randomIdx] + "").replace(".", ",");
-                }else{
-                    randomIdx = Math.floor(Math.random() * Meta.curChipMeta.jpBonusList.length);
-                    this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = randomIdx;
-                }
-                
-            }
-            
+      } else {
+        let randomIdx: number = 0;
+        if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
+          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.betResultList.length);
+          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[randomIdx] + "").replace(".", ",");
+        } else {
+          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.jpBonusList.length);
+          this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = randomIdx;
         }
-
-        this.rewardNumIdx = 0;
-        
-        AudioManager.instance.playSound("sound/gua", ResManager.instance.getBundle("game"));
-        
+      }
     }
 
-    private onLottoryOpened():void{
-        let rewardNum:number;
-        let lottoryNum:number;
-        let rewardNumIdx:number = 0;
-        for(let i:number = 0; i < GameData.betDto.resultInfo.rewardNumList.length; i ++){
-            rewardNum = GameData.betDto.resultInfo.rewardNumList[i];
-            for(let j:number = 0; j < GameData.betDto.resultInfo.resultNumList.length; j ++){
-                lottoryNum = GameData.betDto.resultInfo.resultNumList[j].num;
-                if(rewardNum == lottoryNum){
-                    this.showRewardNum(i, j, rewardNumIdx);
-                    rewardNumIdx ++;
-                }
-            }
+    this.rewardNumIdx = 0;
+
+    AudioManager.instance.playSound("sound/gua", ResManager.instance.getBundle("game"));
+  }
+
+  private onLottoryOpened(): void {
+    let rewardNum: number;
+    let lottoryNum: number;
+    let rewardNumIdx: number = 0;
+    for (let i: number = 0; i < GameData.betDto.resultInfo.rewardNumList.length; i++) {
+      rewardNum = GameData.betDto.resultInfo.rewardNumList[i];
+      for (let j: number = 0; j < GameData.betDto.resultInfo.resultNumList.length; j++) {
+        lottoryNum = GameData.betDto.resultInfo.resultNumList[j].num;
+        if (rewardNum == lottoryNum) {
+          this.showRewardNum(i, j, rewardNumIdx);
+          rewardNumIdx++;
         }
-
-        if(rewardNumIdx == 0){
-            xx.eventManager.emit(GameEvent.SHOW_REWARD);
-        }else{
-            Timer.instance.once(rewardNumIdx * 300 / GameData.speedType + 500 / GameData.speedType, this, function():void{
-                xx.eventManager.emit(GameEvent.SHOW_REWARD);
-            });
-        }
+      }
     }
 
-    private showRewardNum(winNumIdx:number, lottoryIdx:number, rewardNumIdx:number):void{
-        let self =this;
-        Timer.instance.once(rewardNumIdx * 300 / GameData.speedType, this, function():void{
-            GgkWinNumber.ins.comWinNumList[winNumIdx].m_img_right.visible = true;
-            self.comLottoryList[lottoryIdx].m_img_right.visible = true;
-            
-        });
+    if (rewardNumIdx == 0) {
+      EventManager.emit(GameEvent.SHOW_REWARD);
+    } else {
+      Timer.instance.once((rewardNumIdx * 300) / GameData.speedType + 500 / GameData.speedType, this, function (): void {
+        EventManager.emit(GameEvent.SHOW_REWARD);
+      });
     }
+  }
 
-    private onResetGame():void{
-        this.view.m_ani_lottory.visible = true;
-        (this.view.m_ani_lottory.content as sp.Skeleton).setCompleteListener(this.onLottoryReset.bind(this));
-        (this.view.m_ani_lottory.content as sp.Skeleton).loop = false;
-        (this.view.m_ani_lottory.content as sp.Skeleton).animation = "shua_in";
-        (this.view.m_ani_lottory.content as sp.Skeleton).timeScale = GameData.speedType;
+  private showRewardNum(winNumIdx: number, lottoryIdx: number, rewardNumIdx: number): void {
+    let self = this;
+    Timer.instance.once((rewardNumIdx * 300) / GameData.speedType, this, function (): void {
+      GgkWinNumber.ins.comWinNumList[winNumIdx].m_img_right.visible = true;
+      self.comLottoryList[lottoryIdx].m_img_right.visible = true;
+    });
+  }
 
-    }
+  private onResetGame(): void {
+    this.view.m_ani_lottory.visible = true;
+    (this.view.m_ani_lottory.content as sp.Skeleton).setCompleteListener(this.onLottoryReset.bind(this));
+    (this.view.m_ani_lottory.content as sp.Skeleton).loop = false;
+    (this.view.m_ani_lottory.content as sp.Skeleton).animation = "shua_in";
+    (this.view.m_ani_lottory.content as sp.Skeleton).timeScale = GameData.speedType;
+  }
 
-    private onLottoryReset():void{
-        this.doLogic();
-        
-    }
-
+  private onLottoryReset(): void {
+    this.doLogic();
+  }
 }

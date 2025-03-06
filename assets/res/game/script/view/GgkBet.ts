@@ -1,11 +1,10 @@
 import { GameData } from "../../../../script/model/GameData";
 import { GameEvent } from "../event/GameEvent";
-import xx from "@xxyy/app";
 import { Meta } from "../../../../script/meta/Meta";
 import { TextUtil } from "../../../../script/utils/TextUtil";
 import { JpRewardPopup } from "../popup/JpRewardPopup";
 import UI_GgkView from "../Game/UI_GgkView";
-import { BetDto, BetIpo, Chips } from "../../../../script/net/game/data-contracts";
+import { GoldGgkBLLBetSvcBetDto, GoldGgkBLLBetSvcBetIpo, GoldGgkBLLLoadSvcChips } from "../../../../script/net/game/data-contracts";
 import UI_Com_win_num_item from "../Game/UI_Com_win_num_item";
 import UI_Com_bet_item from "../Game/UI_Com_bet_item";
 import * as fgui from "fairygui-cc";
@@ -16,6 +15,9 @@ import { GameConfig } from "../config/GameConfig";
 import { HttpResponse } from "../../../../script/net/game/http-client";
 import { api } from "../../../../script/net/game";
 import { Event, sp } from "cc";
+import { EventManager } from "db://assets/script/xx/event/EventManager";
+import { Config } from "db://assets/script/xx/Config";
+import LocalStorage from "db://assets/script/xx/LocalStorage";
 
 export class GgkBet {
   public static readonly ins = new GgkBet();
@@ -35,8 +37,8 @@ export class GgkBet {
   public init(gameView: UI_GgkView): void {
     this.view = gameView;
 
-    xx.eventManager.on(GameEvent.SHOW_FREE_BET_ANI, this.onshowFreeBetAni, this);
-    xx.eventManager.on(GameEvent.NEXT_GAME, this.onNextGame, this);
+    EventManager.on(GameEvent.SHOW_FREE_BET_ANI, this.onshowFreeBetAni, this);
+    EventManager.on(GameEvent.NEXT_GAME, this.onNextGame, this);
 
     this.view.m_com_reveal.m_btn_spin.onClick(this.onBtnSpinClick, this);
     this.view.m_com_reveal.m_btn_stop.onClick(this.onBtnStopClick, this);
@@ -69,7 +71,7 @@ export class GgkBet {
 
   private setBetValue(): void {
     this.view.m_tf_bet.text = Meta.bet + "";
-    xx.localStorage.set("chipId", Meta.chipId);
+    LocalStorage.instance.set("chipId", Meta.chipId);
   }
 
   private setAutoStatus(): void {
@@ -126,7 +128,7 @@ export class GgkBet {
         this.setAutoStatus();
         this.view.m_com_reveal.m_c1.selectedIndex = 0;
         AlertPopup.instance.open(Lang.translate("errorcode3"), AlertPopup.CONFIRM, this, function () {
-          xx.eventManager.emit(GameEvent.RECHARGE);
+          EventManager.emit(GameEvent.RECHARGE);
         });
         return;
       }
@@ -141,7 +143,7 @@ export class GgkBet {
     }
 
     // this.setFreeSpinStatus();
-    let betDto: BetDto;
+    let betDto: GoldGgkBLLBetSvcBetDto;
     let isError: boolean = false;
 
     fgui.GRoot.inst.showModalWait();
@@ -323,8 +325,8 @@ export class GgkBet {
       }
       fgui.GRoot.inst.closeModalWait();
     } else {
-      let betIpo: BetIpo = { userId: xx.config.userId, currencyId: xx.config.currencyId, chipsId: Meta.curChipMeta.chipsId };
-      let response: HttpResponse<BetDto>;
+      let betIpo: GoldGgkBLLBetSvcBetIpo = { userId: Config.instance.userId, currencyId: Config.instance.currencyId, chipsId: Meta.curChipMeta.chipsId };
+      let response: HttpResponse<GoldGgkBLLBetSvcBetDto>;
       let isError: boolean = false;
       try {
         response = await api.goldGgk.bet(betIpo);
@@ -348,16 +350,16 @@ export class GgkBet {
       GameData.betDto = betDto;
       GameData.speedType = this.speedType;
       if (GameData.needResetGame) {
-        xx.eventManager.emit(GameEvent.RESET_GAME);
+        EventManager.emit(GameEvent.RESET_GAME);
       } else {
-        xx.eventManager.emit(GameEvent.OPEN_WIN_NUMBER);
+        EventManager.emit(GameEvent.OPEN_WIN_NUMBER);
       }
       if (!GameData.isFreeBet) {
         GameData.playerInfo.balance -= Meta.bet;
-        xx.eventManager.emit(GameEvent.REFRESH_PLAYER);
+        EventManager.emit(GameEvent.REFRESH_PLAYER);
       }
 
-      // xx.eventManager.emit(GameEvent.OPEN_WIN_NUMBER);
+      // EventManager.emit(GameEvent.OPEN_WIN_NUMBER);
     }
   }
 
@@ -415,7 +417,7 @@ export class GgkBet {
     //     this.onBtnSpinClick();
     // }
 
-    xx.eventManager.emit(GameEvent.CHANGE_BET);
+    EventManager.emit(GameEvent.CHANGE_BET);
   }
 
   private onAutoListBtnOkClick(): void {
@@ -440,7 +442,7 @@ export class GgkBet {
     item.onClick(function (): void {
       if (GameData.curGameIndex != item.data) {
         GameData.changeGame(item.data);
-        xx.eventManager.emit(GameEvent.RESET_GAME);
+        EventManager.emit(GameEvent.RESET_GAME);
         self.onBetListBtnOkClick();
       }
 
@@ -496,7 +498,7 @@ export class GgkBet {
   }
 
   private onRevealShowComplete(): void {
-    xx.eventManager.emit(GameEvent.NEXT_GAME);
+    EventManager.emit(GameEvent.NEXT_GAME);
   }
 
   private onNextGame(): void {

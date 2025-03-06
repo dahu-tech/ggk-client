@@ -7,7 +7,6 @@ import { GoldGgkBLLLoadSvcLoadDto, GoldGgkBLLLoadSvcLoadIpo } from "../../../scr
 import { HttpResponse } from "../../../script/net/game/http-client";
 import { LoadingCtrl } from "./ctrl/LoadingCtrl";
 import { FguiManager } from "./FguiManager";
-import xx from "@xxyy/app";
 import { AudioManager } from "../../../script/engine/manager/AudioManager";
 import { AppEvents } from "../../../script/base/AppEvents";
 import { ENV, GameConfig } from "./config/GameConfig";
@@ -20,12 +19,16 @@ import { GgkCtrl } from "./ctrl/GgkCtrl";
 import { Timer } from "../../../script/timer/Timer";
 import { Lang } from "../../../script/lang/Lang";
 import { AlertPopup } from "./popup/AlertPopup";
+import { App } from "../../../script/xx/App";
+import { EventManager } from "../../../script/xx/event/EventManager";
+import { Config } from "../../../script/xx/Config";
 // import { initApp } from '../../../script/base';
 const { ccclass, property } = _decorator;
 
 @ccclass
 export default class GameEntry extends Component {
   private jtwToken = "123456";
+  private hasError = false;
   onLoad() {}
 
   async start() {
@@ -45,28 +48,27 @@ export default class GameEntry extends Component {
 
     await FguiManager.instance.initialize();
     LoadingCtrl.instance.initialize();
-
+    let app = new App();
     //1. init app
-    let hasError: boolean = false;
+    // let hasError: boolean = false;
     if (!GameConfig.isDev) {
       try {
-        await xx.app.init(new AppEvents());
-        await xx.app.start();
+        await app.init(new AppEvents());
+        // await app.start();
       } catch (err) {
         console.log(err);
-        hasError = true;
+        this.hasError = true;
       }
     }
 
-    console.log("userId : " + xx.config.userId);
-    // console.log("loginTicket : " + xx.app.loginTicket);
+    console.log("userId : " + Config.instance.userId);
     LoadingCtrl.instance.setProgress(20);
 
     //2. load lang
     let langId = "";
     if (!GameConfig.isDev) {
-      langId = xx.config.langId;
-      console.log("langId : " + xx.config.langId);
+      langId = Config.instance.langId;
+      console.log("langId : " + Config.instance.langId);
     } else {
       langId = TextUtil.getQueryString("lang");
     }
@@ -81,29 +83,25 @@ export default class GameEntry extends Component {
     console.log(langJson.json);
     LoadingCtrl.instance.setProgress(40);
 
-    if (hasError) {
-      AlertPopup.instance.open(Lang.translate("errorcode5"), AlertPopup.ALERT, this, function () {
-        let data: any = { action: "back" };
-        console.log("post message : " + JSON.stringify(data));
-        window.top.postMessage(data, "*");
-      });
-      return;
-    }
-
     //3. init network
     if (!GameConfig.isDev) {
       console.log("test url request");
-      this.jtwToken = xx.config.appToken;
+      this.jtwToken = Config.instance.appToken;
       console.log("this.jwtToken : " + this.jtwToken);
-      api.init(xx.config.appUrl, { secure: true }, () => xx.config.appToken, null, null);
+      api.init(Config.instance.appUrl, { secure: true }, () => Config.instance.appToken, null, null);
     }
 
     LoadingCtrl.instance.setProgress(60);
 
     if (!GameConfig.isDev) {
-      let loadIpo: GoldGgkBLLLoadSvcLoadIpo = { userId: xx.config.userId, currencyId: xx.config.currencyId };
+      let loadIpo: GoldGgkBLLLoadSvcLoadIpo = { userId: Config.instance.userId, currencyId: Config.instance.currencyId };
       let loadDto: HttpResponse<GoldGgkBLLLoadSvcLoadDto> = await api.goldGgk.load(loadIpo);
       console.log("loadDto.result : " + JSON.stringify(loadDto.result));
+      if (loadDto.result === null) {
+        this.errorAlter();
+
+        return;
+      }
       Meta.genMeta(loadDto.result.meta);
       GameData.playerInfo = loadDto.result.playerInfo;
       GameData.genGameInfo(loadDto.result.gameInfo);
@@ -165,7 +163,7 @@ export default class GameEntry extends Component {
 
     LoadingCtrl.instance.setProgress(80);
 
-    xx.eventManager.on(
+    EventManager.on(
       GameEvent.ENTER_GAME,
       function (): void {
         LoadingCtrl.instance.setProgress(100);
@@ -189,7 +187,17 @@ export default class GameEntry extends Component {
     );
     GgkCtrl.instance.initialize();
   }
-
+  errorAlter() {
+    AlertPopup.instance.open(Lang.translate("errorcode5"), AlertPopup.ALERT, this, function () {
+      let data: any = { action: "back" };
+      console.log("post message : " + JSON.stringify(data));
+      window.top.postMessage(data, "*");
+      this.hasError = false;
+      setTimeout(() => {
+        this.start();
+      }, 5000);
+    });
+  }
   private getGwtToken(): string {
     return this.jtwToken;
   }

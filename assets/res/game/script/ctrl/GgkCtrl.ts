@@ -1,9 +1,8 @@
 import { GButton, GTextField, UIConfig, UIObjectFactory } from "fairygui-cc";
 import { ViewCtrl } from "../../../../script/ctrl/ViewCtrl";
-import { LoadDto } from "../../../../script/net/game/data-contracts";
+import { GoldGgkBLLBetSvcBetDto } from "../../../../script/net/game/data-contracts";
 import { FguiManager } from "../FguiManager";
 import GameBinder from "../Game/GameBinder";
-import xx from "@xxyy/app";
 import { GameEvent } from "../event/GameEvent";
 import UI_Com_bet_item from "../Game/UI_Com_bet_item";
 import { UiCompEnum, UiPackageEnum } from "../enum/UiEnum";
@@ -24,6 +23,7 @@ import { GgkLottory } from "../view/GgkLottory";
 import { GgkReward } from "../view/GgkReward";
 import { GgkBet } from "../view/GgkBet";
 import { GgkGoldAni } from "../view/GgkGoldAni";
+import { EventManager } from "db://assets/script/xx/event/EventManager";
 
 export class GgkCtrl extends ViewCtrl {
   public static readonly instance: GgkCtrl = new GgkCtrl();
@@ -34,7 +34,7 @@ export class GgkCtrl extends ViewCtrl {
   public resName: string = UiCompEnum.GgkView;
   public layer: number = 1;
 
-  public gameInfo: LoadDto;
+  public gameInfo: GoldGgkBLLBetSvcBetDto;
 
   public canBet: boolean;
 
@@ -87,14 +87,13 @@ export class GgkCtrl extends ViewCtrl {
   public onPkgLoad() {
     GameBinder.bindAll();
 
-    xx.eventManager.emit(GameEvent.ENTER_GAME);
+    EventManager.emit(GameEvent.ENTER_GAME);
   }
 
   public onViewAdd() {
     super.onViewAdd();
 
     let self = this;
-
     GgkHud.ins.init(this.view);
     GgkJpReward.ins.init(this.view);
     GgkWinNumber.ins.init(this.view);
@@ -107,10 +106,6 @@ export class GgkCtrl extends ViewCtrl {
     GoldAniCtrl.instance.initialize();
     JpRewardPopup.instance.initialize();
     RulePopup.instance.initialize();
-
-    // xx.eventManager.on(GameEvent.SLOT_COMPLETE, this.onSlotComplete, this);
-    // xx.eventManager.on(GameEvent.SLOT_WHEEL_END, this.onSlotWheelEnd, this);
-    // xx.eventManager.on(GameEvent.EXTRA_WIN_END, this.onSlotComplete, this);
 
     this.view.onClick(this.onViewClick, this);
 

@@ -6,73 +6,67 @@ import { Meta } from "../../../../script/meta/Meta";
 import { TextUtil } from "../../../../script/utils/TextUtil";
 import { JpRewardPopup } from "../popup/JpRewardPopup";
 import UI_GgkView from "../Game/UI_GgkView";
-import { Chips } from "../../../../script/net/game/data-contracts";
+import { GoldGgkBLLLoadSvcChips } from "../../../../script/net/game/data-contracts";
 import { Lang } from "../../../../script/lang/Lang";
 import { sp } from "cc";
+import { EventManager } from "db://assets/script/xx/event/EventManager";
 
-export class GgkJpReward{
-    public static readonly ins = new GgkJpReward();
-    
-    protected view:UI_GgkView;
+export class GgkJpReward {
+  public static readonly ins = new GgkJpReward();
 
-    public jpBonusTfList:GTextField[] = [];
+  protected view: UI_GgkView;
 
-    public init(gameView:UI_GgkView):void
-    {
-        this.view = gameView;
-        
-        xx.eventManager.on(GameEvent.CHANGE_BET, this.onChangeBet, this);
-        xx.eventManager.on(GameEvent.SHOW_JP_REWARD, this.onShowJpReward, this);
-        
-        this.jpBonusTfList = [];
+  public jpBonusTfList: GTextField[] = [];
 
-        for(let i:number = 0; i < 4; i ++){
-            this.jpBonusTfList.push(this.view["m_tf_bonus" + (i + 1)]);
-            
-        }
+  public init(gameView: UI_GgkView): void {
+    this.view = gameView;
 
-        this.doLogic();
-        
+    EventManager.on(GameEvent.CHANGE_BET, this.onChangeBet, this);
+    EventManager.on(GameEvent.SHOW_JP_REWARD, this.onShowJpReward, this);
+
+    this.jpBonusTfList = [];
+
+    for (let i: number = 0; i < 4; i++) {
+      this.jpBonusTfList.push(this.view["m_tf_bonus" + (i + 1)]);
     }
 
-    public doLogic():void {
-        //设置jp信息
-        this.showJpBonus();
-        
-        // (this.view.m_ani_jp.content as sp.Skeleton).setCompleteListener(null);
-        // (this.view.m_ani_jp.content as sp.Skeleton).loop = true;
-        // (this.view.m_ani_jp.content as sp.Skeleton).animation = "hongquan";
-            
+    this.doLogic();
+  }
+
+  public doLogic(): void {
+    //设置jp信息
+    this.showJpBonus();
+
+    // (this.view.m_ani_jp.content as sp.Skeleton).setCompleteListener(null);
+    // (this.view.m_ani_jp.content as sp.Skeleton).loop = true;
+    // (this.view.m_ani_jp.content as sp.Skeleton).animation = "hongquan";
+  }
+
+  private showJpBonus(): void {
+    let chips: GoldGgkBLLLoadSvcChips = Meta.curChipMeta;
+
+    //设置jp信息
+    let curJpRewardList: number[] = chips.jpBonusList;
+
+    console.log("curJpRewardList : " + curJpRewardList);
+
+    for (let i: number = 0; i < this.jpBonusTfList.length; i++) {
+      this.jpBonusTfList[i].text = curJpRewardList[i] + "";
     }
 
-    private showJpBonus():void{
-        let chips:Chips = Meta.curChipMeta;
-        
-        //设置jp信息
-        let curJpRewardList:number[] = chips.jpBonusList;
-        
-        console.log("curJpRewardList : " + curJpRewardList);
+    this.view.m_tf_jp.text = chips.jpReward + "";
+    this.view.m_tf_num.text = Lang.translate("win_up_to", [chips.maxReward]);
+  }
 
-        for(let i:number = 0; i < this.jpBonusTfList.length; i ++){
-            this.jpBonusTfList[i].text = curJpRewardList[i] + "";
-        }
+  private onChangeBet(): void {
+    this.showJpBonus();
+  }
 
-        this.view.m_tf_jp.text = chips.jpReward + "";
-        this.view.m_tf_num.text = Lang.translate("win_up_to", [chips.maxReward]);
-        
+  private onShowJpReward(): void {
+    if (GameData.betDto.resultInfo.jpRewardInfo.isTriggerJpReward) {
+      JpRewardPopup.instance.open(Meta.curChipMeta.jpReward);
+    } else {
+      EventManager.emit(GameEvent.CHECK_STAR_UP);
     }
-
-    private onChangeBet():void{
-        this.showJpBonus();
-
-    }
-
-    private onShowJpReward():void{
-        if(GameData.betDto.resultInfo.jpRewardInfo.isTriggerJpReward){
-            JpRewardPopup.instance.open(Meta.curChipMeta.jpReward);
-        }else{
-            xx.eventManager.emit(GameEvent.CHECK_STAR_UP);
-        }
-    }
-
+  }
 }

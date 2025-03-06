@@ -2,7 +2,7 @@ import { Asset, AssetManager, AudioClip, AudioSource, clamp01, Component, Node }
 import { BundleType } from "../common";
 
 import { ResManager } from "./ResManager";
-import xx from "@xxyy/app";
+import LocalStorage from "../../xx/LocalStorage";
 
 export class AudioManager {
   public static readonly instance: AudioManager = new AudioManager();
@@ -27,49 +27,49 @@ export class AudioManager {
   private _isMusicOn: boolean = null;
   public get isMusicOn(): boolean {
     if (!this._isMusicOn) {
-      this._isMusicOn = xx.localStorage.get(this._musicOnKey, true);
+      this._isMusicOn = LocalStorage.instance.get(this._musicOnKey, true);
     }
     return this._isMusicOn;
   }
   public set isMusicOn(val: boolean) {
     this._isMusicOn = val;
-    xx.localStorage.set(this._musicOnKey, val);
+    LocalStorage.instance.set(this._musicOnKey, val);
   }
   private _musicVolume: number = null;
   public get musicVolume(): number {
     if (!this._musicVolume) {
-      this._musicVolume = xx.localStorage.get(this._musicVolumeKey, 1);
+      this._musicVolume = LocalStorage.instance.get(this._musicVolumeKey, 1);
     }
     return this._musicVolume;
   }
   public set musicVolume(val: number) {
     this._musicVolume = clamp01(val);
-    xx.localStorage.set(this._musicVolumeKey, this._musicVolume);
+    LocalStorage.instance.set(this._musicVolumeKey, this._musicVolume);
     this.audio.volume = this._musicVolume;
   }
 
   private _isSoundOn: boolean = null;
   public get isSoundOn(): boolean {
     if (!this._isSoundOn) {
-      this._isSoundOn = xx.localStorage.get(this._soundOnKey, true);
+      this._isSoundOn = LocalStorage.instance.get(this._soundOnKey, true);
     }
     return this._isSoundOn;
   }
   public set isSoundOn(val: boolean) {
     this._isSoundOn = val;
-    xx.localStorage.set(this._soundOnKey, val);
+    LocalStorage.instance.set(this._soundOnKey, val);
   }
 
   private _soundVolume: number = null;
   public get soundVolume(): number {
     if (!this._soundVolume) {
-      this._soundVolume = xx.localStorage.get(this._soundVolumeKey, 1);
+      this._soundVolume = LocalStorage.instance.get(this._soundVolumeKey, 1);
     }
     return this._soundVolume;
   }
   public set soundVolume(val: number) {
     this._soundVolume = clamp01(val);
-    xx.localStorage.set(this._soundVolumeKey, this._soundVolume);
+    LocalStorage.instance.set(this._soundVolumeKey, this._soundVolume);
   }
   //#endregion
 
@@ -78,14 +78,16 @@ export class AudioManager {
   public soundInfos: Map<string, AudioClip> = new Map();
 
   public async playSound(url: string, bundle: AssetManager.Bundle) {
-    if (!this.isSoundOn) { return; }
+    if (!this.isSoundOn) {
+      return;
+    }
     let key = this._getKey(url, bundle);
     let sound = this.soundInfos.get(key);
     if (!sound) {
       await ResManager.instance.loadAsset(bundle, url, Asset);
       sound = ResManager.instance.getAsset(bundle, url);
       if (!sound) {
-        xx.logger.error(`音效文件没有加载。bundle: ${bundle} url: ${url}`);
+        console.error(`音效文件没有加载。bundle: ${bundle} url: ${url}`);
         return;
       }
       sound.addRef();
@@ -98,16 +100,18 @@ export class AudioManager {
   }
 
   public async playMusic(url: string, bundle: AssetManager.Bundle, loop: boolean = true): Promise<void> {
-    if (!this.isMusicOn) { return; }
+    if (!this.isMusicOn) {
+      return;
+    }
     let key = this._getKey(url, bundle);
     if (key != this._currentMusicKey) {
       this.musicInfos.get(this._currentMusicKey)?.decRef(); //旧的
       let music = this.musicInfos.get(key);
       if (!music) {
-        let sound:any = await ResManager.instance.loadAsset(bundle, url, Asset);
+        let sound: any = await ResManager.instance.loadAsset(bundle, url, Asset);
         music = ResManager.instance.getAsset(bundle, url);
         if (!music) {
-          xx.logger.error(`音乐文件没有加载。bundle: ${bundle} url: ${url}`);
+          console.error(`音乐文件没有加载。bundle: ${bundle} url: ${url}`);
           return;
         }
         music.addRef();
