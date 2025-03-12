@@ -76,7 +76,6 @@ export class Config {
   constructor() {
     /** 应用类型：1-大厅 2-游戏 */
     this.appType = 2;
-
     /** 应用状态0-正常1-维护 */
     this.appStatus = 0;
     /** 应用连接方式: 1-api+ticket 2-ws */

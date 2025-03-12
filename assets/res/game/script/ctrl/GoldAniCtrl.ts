@@ -1,6 +1,5 @@
 import { FunctionCtrl } from "../../../../script/ctrl/FunctionCtrl";
 import { FguiManager } from "../FguiManager";
-import xx from "@xxyy/app";
 import { AniTypeEnum } from "../../../../script/enum/AniTypeEnum";
 import { AlertPopup } from "../popup/AlertPopup";
 import { GameEvent } from "../event/GameEvent";

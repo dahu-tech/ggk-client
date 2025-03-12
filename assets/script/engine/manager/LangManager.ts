@@ -1,6 +1,5 @@
 import { AssetManager, JsonAsset, math, screen } from "cc";
 import { ResManager } from "./ResManager";
-import xx from "@xxyy/app";
 import { EventIdEnum } from "../enum/EventIdEnum";
 import { EventManager } from "../../xx/event/EventManager";
 

@@ -1,6 +1,5 @@
 import { GameData } from "../../../../script/model/GameData";
 import { GameEvent } from "../event/GameEvent";
-import xx from "@xxyy/app";
 import { GButton, GTextField } from "fairygui-cc";
 import { Meta } from "../../../../script/meta/Meta";
 import { TextUtil } from "../../../../script/utils/TextUtil";

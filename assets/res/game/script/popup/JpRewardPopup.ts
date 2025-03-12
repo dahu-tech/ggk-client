@@ -1,7 +1,6 @@
 import { TextUtil } from "../../../../script/utils/TextUtil";
 import { FunctionCtrl } from "../../../../script/ctrl/FunctionCtrl";
 import { FguiManager } from "../FguiManager";
-import xx from "@xxyy/app";
 import { GameEvent } from "../event/GameEvent";
 import { UiCompEnum, UiPackageEnum } from "../enum/UiEnum";
 import { AniTypeEnum } from "../../../../script/enum/AniTypeEnum";

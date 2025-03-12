@@ -1,5 +1,4 @@
 import { GoldGgkBLLBetSvcBetDto, GoldGgkBLLLoadSvcGameInfo, GoldGgkBLLLoadSvcPlayerInfo } from "../net/game/data-contracts";
-// import xx from "@xxyy/app";
 import LocalStorage from "../xx/LocalStorage";
 
 export class GameData {
