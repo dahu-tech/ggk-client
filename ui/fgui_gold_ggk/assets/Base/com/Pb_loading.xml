@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="604,30" extention="ProgressBar">
   <displayList>
-    <image id="n2_lwfq" name="n2" src="dtysfq" fileName="res/jdtd.png" xy="0,0"/>
-    <image id="n3_lwfq" name="bar" src="dtysfp" fileName="res/jdt.png" xy="12,8"/>
-    <text id="n4_lwfq" name="n4" xy="197,43" size="109,34" fontSize="24" color="#dfb32e" align="center" vAlign="middle" strokeColor="#000000" strokeSize="5" text="LOADING"/>
-    <text id="n5_lwfq" name="title" xy="324,43" size="40,34" fontSize="24" color="#dfb32e" vAlign="middle" strokeColor="#000000" strokeSize="5" text="1%"/>
+    <image id="n2_lwfq" name="n2" src="k481fz" fileName="res/progress_bg.png" xy="0,0" size="606,29"/>
+    <image id="n3_lwfq" name="bar" src="k481fy" fileName="res/progress.png" xy="6,5" size="593,18"/>
+    <text id="n4_lwfq" name="n4" xy="197,43" size="10,34" fontSize="24" color="#76e850" align="center" vAlign="middle" strokeColor="#000000" strokeSize="5" text=""/>
+    <text id="n5_lwfq" name="title" xy="329,-36" size="42,36" fontSize="26" color="#76e850" align="center" vAlign="middle" strokeColor="#000000" strokeSize="5" text="1%"/>
+    <text id="n7_grjm" name="n7" xy="175,-36" size="125,36" fontSize="26" color="#76e850" align="center" vAlign="middle" strokeColor="#000000" strokeSize="5" text="Gold Card"/>
   </displayList>
   <ProgressBar/>
 </component>

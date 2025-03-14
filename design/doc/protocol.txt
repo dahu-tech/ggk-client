@@ -15,30 +15,30 @@ Dto
 	"gameInfo":[
 		{
 			"bet" : 10, //下注额，与下面betJpBonus中的数据应该是一一对应关系
-			"freeSpinCount" : 0,//免费摇奖次数
-			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+			"spinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
 		},
 		{
 			"bet" : 50, //下注额
-			"freeSpinCount" : 0,//免费摇奖次数
-			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+			"spinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
 		},
 		{
 			"bet" : 100, //下注额
-			"freeSpinCount" : 0,//免费摇奖次数
-			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+			"spinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
 		}
 	],
 	//纯配置信息
 	"meta":{
 		//下注值
 		"chips": [
-			{"chipsId": 1, "bet" : "10", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [100, 200, 400, 800], "jpReward":1000},
-			{"chipsId": 2, "bet" : "50", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [200, 400, 800, 100], "jpReward":1000},
-			{"chipsId": 3, "bet" : "100", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [1000, 2000, 4000, 8000], "jpReward":1000},
-			{"chipsId": 4, "bet" : "200", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [400, 800, 1600, 3200], "jpReward":1000},
-			{"chipsId": 5, "bet" : "500", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [1000, 2000, 4000, 8000], "jpReward":1000},
-			{"chipsId": 6, "bet" : "1000", "betResultList" : [10, 20, 40, 80], "jpBonusList" : [2000, 4000, 8000, 16000], "jpReward":1000}
+			{"chipsId": 1, "bet" : "10", "prizeList" : [10, 20, 40, 80], "jackpotList" : [100, 200, 400, 800], "jpReward":1000},
+			{"chipsId": 2, "bet" : "50", "prizeList" : [10, 20, 40, 80], "jackpotList" : [200, 400, 800, 100], "jpReward":1000},
+			{"chipsId": 3, "bet" : "100", "prizeList" : [10, 20, 40, 80], "jackpotList" : [1000, 2000, 4000, 8000], "jpReward":1000},
+			{"chipsId": 4, "bet" : "200", "prizeList" : [10, 20, 40, 80], "jackpotList" : [400, 800, 1600, 3200], "jpReward":1000},
+			{"chipsId": 5, "bet" : "500", "prizeList" : [10, 20, 40, 80], "jackpotList" : [1000, 2000, 4000, 8000], "jpReward":1000},
+			{"chipsId": 6, "bet" : "1000", "prizeList" : [10, 20, 40, 80], "jackpotList" : [2000, 4000, 8000, 16000], "jpReward":1000}
 		]
 		
 	}
@@ -114,8 +114,8 @@ Dto
 		"totalReward":10000,//所有彩票的奖励总和
 		"gameItemInfo":{
 			"bet" : 10, //下注额
-			"freeSpinCount" : 0,//免费摇奖次数
-			"betCounter":0 //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+			"spinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
 		}
 		"jpRewardInfo":{//彩票jp奖励信息
 			"isTriggerJpReward": true,//是否收集齐彩票，触发jp抽奖

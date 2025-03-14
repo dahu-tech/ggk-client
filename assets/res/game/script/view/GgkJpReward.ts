@@ -45,7 +45,7 @@ export class GgkJpReward {
     let chips: GoldGgkBLLLoadSvcChips = Meta.curChipMeta;
 
     //设置jp信息
-    let curJpRewardList: number[] = chips.jpBonusList;
+    let curJpRewardList: number[] = chips.jackpotList;
 
     console.log("curJpRewardList : " + curJpRewardList);
 

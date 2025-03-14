@@ -29,13 +29,13 @@ export class GameData {
     }
 
     this.curGameInfo = this.gameInfo[this.curGameIndex];
-    this.isFreeBet = this.curGameInfo.freeSpinCount > 0;
+    this.isFreeBet = this.curGameInfo.spinNum > 0;
   }
 
   public static changeGame(chipIndex: number): void {
     this.curGameIndex = chipIndex;
     this.curGameInfo = this.gameInfo[chipIndex];
-    this.isFreeBet = this.curGameInfo.freeSpinCount > 0;
+    this.isFreeBet = this.curGameInfo.spinNum > 0;
     this.needResetGame = false;
   }
 

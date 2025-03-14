@@ -42,7 +42,7 @@ export class GgkCtrl extends ViewCtrl {
 
   public betBtnList: GButton[] = [];
 
-  public curJpBonusList: number[] = [];
+  public curjackpotList: number[] = [];
 
   public jpBonusTfList: GTextField[] = [];
 
@@ -130,7 +130,7 @@ export class GgkCtrl extends ViewCtrl {
   //         this.view.m_com_spin.m_c1.selectedIndex = 0;
   //     }
 
-  //     if(GameData.curGameInfo.freeSpinCount > 0){
+  //     if(GameData.curGameInfo.spinNum > 0){
   //         this.onBtnSpinClick();
   //         this.isAuto = false;
   //         this.auto = 0;

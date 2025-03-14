@@ -1,0 +1,1082 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "dahu feature service",
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "name": "ReferralService"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/v1/referral/applyToBeReferrer": {
+      "post": {
+        "summary": "申请成为代理",
+        "description": "申请成为代理，必须有登录态",
+        "operationId": "ReferralService_ApplyToBeReferrer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceApplyToBeReferrerResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceApplyToBeReferrerRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/createWithdrawOrder": {
+      "post": {
+        "summary": "创建提现订单",
+        "description": "创建提现订单，必须有登录态",
+        "operationId": "ReferralService_CreateReferralWithdrawOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceCreateReferralWithdrawOrderResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceCreateReferralWithdrawOrderRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/ping": {
+      "post": {
+        "summary": "ping 摘要",
+        "description": "ping 详情",
+        "operationId": "ReferralService_Ping",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceRefPingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceRefPingRequest"
+            }
+          }
+        ],
+        "tags": ["测试", "分组2"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/refereeUsers": {
+      "post": {
+        "summary": "获取代理人下的用户列表",
+        "description": "获取代理人下的用户列表，必须有登录态",
+        "operationId": "ReferralService_RefereeUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceRefereeUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceRefereeUsersRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/referrerDailyUserRecords": {
+      "post": {
+        "summary": "获取代理人某个日期下用户的佣金日报列表",
+        "description": "获取代理人某个日期下用户的佣金日报列表，必须有登录态",
+        "operationId": "ReferralService_ReferrerDailyUserRecords",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferrerDailyUserRecordsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferrerDailyUserRecordsRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/referrerInfo": {
+      "post": {
+        "summary": "获取代理人信息",
+        "description": "获取代理人信息，参数不用传，必须有登录态",
+        "operationId": "ReferralService_GetReferrerInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferrerInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferrerInfoRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/referrerRecords": {
+      "post": {
+        "summary": "获取代理人佣金日报列表",
+        "description": "获取代理人佣金日报列表，必须有登录态",
+        "operationId": "ReferralService_ReferrerDailyRecords",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferrerDailyRecordsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferrerDailyRecordsRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/userRecords": {
+      "post": {
+        "summary": "获取某个用户佣金日报列表",
+        "description": "获取某个用户佣金日报列表，必须有登录态",
+        "operationId": "ReferralService_UserDailyRecords",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceUserDailyRecordsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceUserDailyRecordsRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/withdrawConfig": {
+      "post": {
+        "summary": "获取提现配置",
+        "description": "获取提现配置，必须有登录态",
+        "operationId": "ReferralService_GetReferralWithdrawConfig",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferralWithdrawConfigResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferralWithdrawConfigRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/withdrawOrderQuery": {
+      "post": {
+        "summary": "查询订单支付状态",
+        "description": "查询订单支付状态，必须有登录态",
+        "operationId": "ReferralService_ReferralWithdrawOrderQuery",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferralWithdrawOrderQueryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceReferralWithdrawOrderQueryRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/referral/withdrawOrders": {
+      "post": {
+        "summary": "获取提现订单列表",
+        "description": "获取提现订单列表，必须有登录态",
+        "operationId": "ReferralService_GetReferralWithdrawOrders",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferralWithdrawOrdersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/dahu_feature_serviceGetReferralWithdrawOrdersRequest"
+            }
+          }
+        ],
+        "tags": ["代理"],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "dahu_feature_serviceApplyToBeReferrerRequest": {
+      "type": "object",
+      "title": "申请成为代理"
+    },
+    "dahu_feature_serviceApplyToBeReferrerResponse": {
+      "type": "object",
+      "properties": {
+        "isReferrer": {
+          "type": "boolean",
+          "title": "是否是代理"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "title": "代理状态"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "title": "代理级别"
+        }
+      }
+    },
+    "dahu_feature_serviceCreateReferralWithdrawOrderRequest": {
+      "type": "object",
+      "properties": {
+        "withdrawType": {
+          "type": "integer",
+          "format": "int32",
+          "title": "提现类型 1:转账到平台,2:提现到手机银行"
+        },
+        "amount": {
+          "type": "string",
+          "title": "费用"
+        },
+        "receivingBankCode": {
+          "type": "string",
+          "title": "收款银行"
+        },
+        "receivingAccount": {
+          "type": "string",
+          "title": "收款账号"
+        },
+        "receivingName": {
+          "type": "string",
+          "title": "收款姓名"
+        },
+        "payChannel": {
+          "type": "string",
+          "title": "支付渠道"
+        },
+        "paymentMethodConfigId": {
+          "type": "string",
+          "format": "int64",
+          "title": "支付方法配置的ID"
+        }
+      },
+      "title": "创建提现订单"
+    },
+    "dahu_feature_serviceCreateReferralWithdrawOrderResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "id"
+        }
+      }
+    },
+    "dahu_feature_serviceGetReferralWithdrawConfigRequest": {
+      "type": "object",
+      "title": "获取提现配置"
+    },
+    "dahu_feature_serviceGetReferralWithdrawConfigResponse": {
+      "type": "object",
+      "properties": {
+        "withdrawCycle": {
+          "type": "integer",
+          "format": "int32",
+          "title": "提现间隔周期,日：1，周：2，月：3"
+        },
+        "withdrawCycleValue": {
+          "type": "integer",
+          "format": "int32",
+          "title": "提现间隔数值"
+        },
+        "withdrawCountInCycle": {
+          "type": "string",
+          "format": "int64",
+          "title": "周期内已提现次数"
+        },
+        "withdrawToPlatformMinimum": {
+          "type": "string",
+          "title": "提现到平台账号最小金额"
+        },
+        "withdrawToMobileMinimum": {
+          "type": "string",
+          "title": "提现到手机银行最小金额"
+        },
+        "withdrawToMobileFee": {
+          "type": "string",
+          "title": "提现到银行卡手续费(example: 0.05 表示 5%)"
+        }
+      }
+    },
+    "dahu_feature_serviceGetReferralWithdrawOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "pageNum": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "title": "每页大小"
+        }
+      },
+      "title": "获取提现订单列表"
+    },
+    "dahu_feature_serviceGetReferralWithdrawOrdersResponse": {
+      "type": "object",
+      "properties": {
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总页数"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/dahu_feature_serviceReferralWithdrawOrder"
+          },
+          "title": "记录列表"
+        }
+      }
+    },
+    "dahu_feature_serviceGetReferrerInfoRequest": {
+      "type": "object",
+      "title": "获取代理信息"
+    },
+    "dahu_feature_serviceGetReferrerInfoResponse": {
+      "type": "object",
+      "properties": {
+        "isApply": {
+          "type": "boolean",
+          "title": "是否已经申请"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "title": "代理状态，0:申请中，1:状态正常，-1:拒绝, -2:冻结"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "title": "代理级别"
+        },
+        "code": {
+          "type": "string",
+          "title": "代理Code"
+        },
+        "balance": {
+          "type": "string",
+          "title": "钱包"
+        },
+        "newlyAdded": {
+          "type": "string",
+          "title": "今日新增"
+        },
+        "totalCommission": {
+          "type": "string",
+          "title": "历史总佣金"
+        },
+        "currency": {
+          "type": "string",
+          "title": "货币"
+        },
+        "currencyAlias": {
+          "type": "string",
+          "title": "货币别名"
+        },
+        "refereeUserCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "推荐的人数"
+        },
+        "newRefereeUserCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "今日新增推荐的人数"
+        },
+        "isRefereeUser": {
+          "type": "boolean",
+          "title": "是否是代理用户"
+        },
+        "remainApplyTime": {
+          "type": "integer",
+          "format": "int32",
+          "title": "剩余申请时间"
+        }
+      }
+    },
+    "dahu_feature_serviceRefPingRequest": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 123,
+          "description": "The ID of the example item",
+          "title": "时间戳"
+        },
+        "info": {
+          "type": "string",
+          "title": "留言"
+        }
+      }
+    },
+    "dahu_feature_serviceRefPingResponse": {
+      "type": "object",
+      "properties": {
+        "frontTimestamp": {
+          "type": "string",
+          "format": "int64",
+          "title": "前端时间戳"
+        },
+        "backTimestamp": {
+          "type": "string",
+          "format": "int64",
+          "title": "后端时间戳"
+        },
+        "info": {
+          "type": "string",
+          "title": "留言"
+        }
+      }
+    },
+    "dahu_feature_serviceRefereeUser": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "title": "用户UID，252****515"
+        },
+        "commission": {
+          "type": "string",
+          "title": "佣金"
+        },
+        "agentCommission": {
+          "type": "string",
+          "title": "代理佣金"
+        },
+        "createdTime": {
+          "type": "string",
+          "format": "int64",
+          "title": "创建时间"
+        }
+      }
+    },
+    "dahu_feature_serviceRefereeUsersRequest": {
+      "type": "object",
+      "properties": {
+        "pageNum": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "title": "每页大小"
+        },
+        "userId": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户ID (非必填，不填写差所有的，添了就只查询该用户的)"
+        }
+      },
+      "title": "获取代理人下的用户列表"
+    },
+    "dahu_feature_serviceRefereeUsersResponse": {
+      "type": "object",
+      "properties": {
+        "refereeUserCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "推荐的人数"
+        },
+        "newRefereeUserCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "今日新增推荐的人数"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总页数"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/dahu_feature_serviceRefereeUser"
+          },
+          "title": "记录列表"
+        }
+      }
+    },
+    "dahu_feature_serviceReferralWithdrawOrder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "id"
+        },
+        "userId": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户UID"
+        },
+        "country": {
+          "type": "string",
+          "title": "国家"
+        },
+        "currency": {
+          "type": "string",
+          "title": "货币类型"
+        },
+        "amount": {
+          "type": "string",
+          "title": "提现金额"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "title": "提现状态，1:处理中，2:转账中，3:提现成功，-1:提现失败"
+        },
+        "withdrawType": {
+          "type": "integer",
+          "format": "int32",
+          "title": "提现类型 1:转账到平台,2:提现到手机银行"
+        },
+        "transactionId": {
+          "type": "string",
+          "format": "int64",
+          "title": "支付ID"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "创建时间"
+        },
+        "receivingBank": {
+          "type": "string",
+          "title": "收款银行"
+        },
+        "receivingAccount": {
+          "type": "string",
+          "title": "收款账号"
+        },
+        "receivingName": {
+          "type": "string",
+          "title": "收款姓名"
+        },
+        "receivingAmount": {
+          "type": "string",
+          "title": "实际到账金额"
+        },
+        "payChannel": {
+          "type": "string",
+          "title": "支付渠道"
+        }
+      }
+    },
+    "dahu_feature_serviceReferralWithdrawOrderQueryRequest": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "format": "int64",
+          "title": "订单ID"
+        }
+      },
+      "title": "查询订单支付状态"
+    },
+    "dahu_feature_serviceReferralWithdrawOrderQueryResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "title": "状态"
+        },
+        "amount": {
+          "type": "string",
+          "title": "充值额度"
+        },
+        "transactionId": {
+          "type": "string",
+          "format": "int64",
+          "title": "支付ID"
+        }
+      }
+    },
+    "dahu_feature_serviceReferrerDailyRecord": {
+      "type": "object",
+      "properties": {
+        "dailyTag": {
+          "type": "string",
+          "title": "日期标签"
+        },
+        "commission": {
+          "type": "string",
+          "title": "佣金"
+        },
+        "agentCommission": {
+          "type": "string",
+          "title": "代理佣金"
+        },
+        "createdTime": {
+          "type": "string",
+          "format": "int64",
+          "title": "创建时间"
+        }
+      }
+    },
+    "dahu_feature_serviceReferrerDailyRecordsRequest": {
+      "type": "object",
+      "properties": {
+        "pageNum": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "title": "每页大小"
+        }
+      },
+      "title": "获取代理人佣金日报列表"
+    },
+    "dahu_feature_serviceReferrerDailyRecordsResponse": {
+      "type": "object",
+      "properties": {
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总页数"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/dahu_feature_serviceReferrerDailyRecord"
+          },
+          "title": "记录列表"
+        },
+        "totalCommission": {
+          "type": "string",
+          "title": "历史贡献佣金"
+        },
+        "totalAgentCommission": {
+          "type": "string",
+          "title": "历史代理佣金"
+        },
+        "currency": {
+          "type": "string",
+          "title": "货币"
+        },
+        "currencyAlias": {
+          "type": "string",
+          "title": "货币别名"
+        }
+      }
+    },
+    "dahu_feature_serviceReferrerDailyUserRecord": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "title": "用户UID，252****515"
+        },
+        "commission": {
+          "type": "string",
+          "title": "佣金"
+        },
+        "agentCommission": {
+          "type": "string",
+          "title": "代理佣金"
+        },
+        "createdTime": {
+          "type": "string",
+          "format": "int64",
+          "title": "创建时间"
+        }
+      }
+    },
+    "dahu_feature_serviceReferrerDailyUserRecordsRequest": {
+      "type": "object",
+      "properties": {
+        "pageNum": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "title": "每页大小"
+        },
+        "dailyTag": {
+          "type": "string",
+          "title": "日期标签（必填）"
+        },
+        "userId": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户ID (非必填，不填写差所有的，添了就只查询该用户的)"
+        }
+      },
+      "title": "获取代理人某个日期下用户的佣金日报列表"
+    },
+    "dahu_feature_serviceReferrerDailyUserRecordsResponse": {
+      "type": "object",
+      "properties": {
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总页数"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/dahu_feature_serviceReferrerDailyUserRecord"
+          },
+          "title": "记录列表"
+        }
+      }
+    },
+    "dahu_feature_serviceUserDailyRecord": {
+      "type": "object",
+      "properties": {
+        "dailyTag": {
+          "type": "string",
+          "title": "日期标签"
+        },
+        "commission": {
+          "type": "string",
+          "title": "佣金"
+        },
+        "agentCommission": {
+          "type": "string",
+          "title": "代理佣金"
+        },
+        "createdTime": {
+          "type": "string",
+          "format": "int64",
+          "title": "创建时间"
+        }
+      }
+    },
+    "dahu_feature_serviceUserDailyRecordsRequest": {
+      "type": "object",
+      "properties": {
+        "pageNum": {
+          "type": "integer",
+          "format": "int32",
+          "title": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "title": "每页大小"
+        },
+        "userId": {
+          "type": "string",
+          "format": "int64",
+          "title": "用户ID (必填)"
+        }
+      },
+      "title": "获取某个用户佣金日报列表"
+    },
+    "dahu_feature_serviceUserDailyRecordsResponse": {
+      "type": "object",
+      "properties": {
+        "totalCommission": {
+          "type": "string",
+          "title": "历史贡献佣金"
+        },
+        "totalAgentCommission": {
+          "type": "string",
+          "title": "历史代理佣金"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "title": "总页数"
+        },
+        "currency": {
+          "type": "string",
+          "title": "货币"
+        },
+        "currencyAlias": {
+          "type": "string",
+          "title": "货币别名"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/dahu_feature_serviceUserDailyRecord"
+          },
+          "title": "记录列表"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "name": "token",
+      "in": "header"
+    }
+  }
+}

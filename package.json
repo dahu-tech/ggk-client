@@ -4,5 +4,14 @@
   "version": "3.6.2",
   "creator": {
     "version": "3.6.2"
+  },
+  "dependencies": {
+    "fairygui-cc": "^1.2.2",
+    "swagger-typescript-api": "^10.0.1"
+  },
+  "scripts": {
+    "openapi": "swagger-typescript-api -p swagger.json -o ./src/api -n Api.ts --modular",
+    "api": "swagger-typescript-api -p http://petstore.swagger.io/v2/swagger.json -o ./src/api -n my-api -m",
+    "test": "swagger-typescript-api -p swagger.json -o ./src/api  --debug"
   }
 }

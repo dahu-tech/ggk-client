@@ -8,6 +8,7 @@ export default class UI_Pb_loading extends fgui.GProgressBar {
 	public m_bar:fgui.GImage;
 	public m_n4:fgui.GTextField;
 	public m_title:fgui.GTextField;
+	public m_n7:fgui.GTextField;
 	public static URL:string = "ui://iaouwyjslwfqf9";
 
 	public static createInstance():UI_Pb_loading {
@@ -19,5 +20,6 @@ export default class UI_Pb_loading extends fgui.GProgressBar {
 		this.m_bar = <fgui.GImage>(this.getChildAt(1));
 		this.m_n4 = <fgui.GTextField>(this.getChildAt(2));
 		this.m_title = <fgui.GTextField>(this.getChildAt(3));
+		this.m_n7 = <fgui.GTextField>(this.getChildAt(4));
 	}
 }

@@ -35,9 +35,12 @@ export class App {
    */
   public async init(events) {
     this.appEvents = events;
+    console.log(";????");
   }
   start() {
     // game登录
+    console.log(this._config.appType, this._config.appLink);
+
     if (this._config.appType == 2 && this._config.appLink == 1) {
       this.gameLogin();
     }
@@ -48,5 +51,6 @@ export class App {
       userId: this._config.userId,
       ticket: LocalStorage.instance.getParamValue(this.url, "ticket"),
     };
+    console.log("gameLogin", json);
   }
 }

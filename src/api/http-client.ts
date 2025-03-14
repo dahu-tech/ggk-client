@@ -9,14 +9,6 @@
  * ---------------------------------------------------------------
  */
 
-interface IResponseResult {
-  success: boolean;
-  code?: string;
-  message?: string;
-  exception?: string;
-  data: any;
-}
-
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
@@ -37,8 +29,6 @@ export interface FullRequestParams extends Omit<RequestInit, "body"> {
   baseUrl?: string;
   /** request cancellation token */
   cancelToken?: CancelToken;
-  /** 请求过期时间 */
-  timeout?: number;
 }
 
 export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
@@ -46,22 +36,12 @@ export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" 
 export interface ApiConfig<SecurityDataType = unknown> {
   baseUrl?: string;
   baseApiParams?: Omit<RequestParams, "baseUrl" | "cancelToken" | "signal">;
-  securityWorker?: (securityData: SecurityDataType | null, body: unknown) => Promise<RequestParams | void> | RequestParams | void;
+  securityWorker?: (securityData: SecurityDataType | null) => Promise<RequestParams | void> | RequestParams | void;
   customFetch?: typeof fetch;
 }
 
 export interface HttpResponse<D extends unknown, E extends unknown = unknown> extends Response {
-  /** 请求是否成功 */
-  success: boolean;
-  /** 服务器返回的错误代码 */
-  code?: string;
-  /** 服务器返回的消息 */
-  message?: string;
-  /** 服务器返回的异常 */
-  exception?: string;
-  /** 服务器返回的数据 */
-  result: D;
-  /** 客户端请求异常 */
+  data: D;
   error: E;
 }
 
@@ -71,15 +51,14 @@ export enum ContentType {
   Json = "application/json",
   FormData = "multipart/form-data",
   UrlEncoded = "application/x-www-form-urlencoded",
-  Text = "text/plain",
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  protected baseUrl: string = "";
+  public baseUrl: string = "";
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private abortControllers = new Map<CancelToken, AbortController>();
-  private customFetch = (...fetchParams: Parameters<typeof fetch>) => this.fetchRequest(...fetchParams);
+  private customFetch = (...fetchParams: Parameters<typeof fetch>) => fetch(...fetchParams);
 
   private baseApiParams: RequestParams = {
     credentials: "same-origin",
@@ -113,7 +92,9 @@ export class HttpClient<SecurityDataType = unknown> {
   protected toQueryString(rawQuery?: QueryParamsType): string {
     const query = rawQuery || {};
     const keys = Object.keys(query).filter((key) => "undefined" !== typeof query[key]);
-    return keys.map((key) => (Array.isArray(query[key]) ? this.addArrayQueryParam(query, key) : this.addQueryParam(query, key))).join("&");
+    return keys
+      .map((key) => (Array.isArray(query[key]) ? this.addArrayQueryParam(query, key) : this.addQueryParam(query, key)))
+      .join("&");
   }
 
   protected addQueryParams(rawQuery?: QueryParamsType): string {
@@ -122,12 +103,19 @@ export class HttpClient<SecurityDataType = unknown> {
   }
 
   private contentFormatters: Record<ContentType, (input: any) => any> = {
-    [ContentType.Json]: (input: any) => (input !== null && (typeof input === "object" || typeof input === "string") ? JSON.stringify(input) : input),
-    [ContentType.Text]: (input: any) => (input !== null && typeof input !== "string" ? JSON.stringify(input) : input),
+    [ContentType.Json]: (input: any) =>
+      input !== null && (typeof input === "object" || typeof input === "string") ? JSON.stringify(input) : input,
     [ContentType.FormData]: (input: any) =>
       Object.keys(input || {}).reduce((formData, key) => {
         const property = input[key];
-        formData.append(key, property instanceof Blob ? property : typeof property === "object" && property !== null ? JSON.stringify(property) : `${property}`);
+        formData.append(
+          key,
+          property instanceof Blob
+            ? property
+            : typeof property === "object" && property !== null
+            ? JSON.stringify(property)
+            : `${property}`,
+        );
         return formData;
       }, new FormData()),
     [ContentType.UrlEncoded]: (input: any) => this.toQueryString(input),
@@ -169,8 +157,22 @@ export class HttpClient<SecurityDataType = unknown> {
     }
   };
 
-  protected request = async <T = any, E = any>({ body, secure, path, type, query, format = "json", baseUrl, cancelToken, ...params }: FullRequestParams): Promise<HttpResponse<T, E>> => {
-    const secureParams = ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) && this.securityWorker && (await this.securityWorker(this.securityData, body))) || {};
+  public request = async <T = any, E = any>({
+    body,
+    secure,
+    path,
+    type,
+    query,
+    format,
+    baseUrl,
+    cancelToken,
+    ...params
+  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
+    const secureParams =
+      ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
+        this.securityWorker &&
+        (await this.securityWorker(this.securityData))) ||
+      {};
     const requestParams = this.mergeRequestParams(params, secureParams);
     const queryString = query && this.toQueryString(query);
     const payloadFormatter = this.contentFormatters[type || ContentType.Json];
@@ -179,15 +181,14 @@ export class HttpClient<SecurityDataType = unknown> {
     return this.customFetch(`${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`, {
       ...requestParams,
       headers: {
-        ...(requestParams.headers || {}),
         ...(type && type !== ContentType.FormData ? { "Content-Type": type } : {}),
+        ...(requestParams.headers || {}),
       },
       signal: cancelToken ? this.createAbortSignal(cancelToken) : requestParams.signal,
       body: typeof body === "undefined" || body === null ? null : payloadFormatter(body),
     }).then(async (response) => {
       const r = response as HttpResponse<T, E>;
-      r.success = r.ok;
-      r.result = null as unknown as T;
+      r.data = null as unknown as T;
       r.error = null as unknown as E;
 
       const data = !responseFormat
@@ -195,14 +196,8 @@ export class HttpClient<SecurityDataType = unknown> {
         : await response[responseFormat]()
             .then((data) => {
               if (r.ok) {
-                var rsp = data as unknown as IResponseResult;
-                r.success = rsp.success;
-                r.code = rsp.code;
-                r.message = rsp.message;
-                r.exception = rsp.exception;
-                r.result = rsp.data;
+                r.data = data;
               } else {
-                r.success = false;
                 r.error = data;
               }
               return r;
@@ -216,35 +211,8 @@ export class HttpClient<SecurityDataType = unknown> {
         this.abortControllers.delete(cancelToken);
       }
 
+      if (!response.ok) throw data;
       return data;
     });
   };
-
-  /** 自定义timeout请求 */
-  protected fetchRequest(url: RequestInfo | URL, params?: RequestParams): Promise<Response> {
-    if (!params?.timeout) {
-      return fetch(url, params);
-    }
-    let isTimeout = false;
-    return new Promise((resolve, reject) => {
-      const timerId = setTimeout(() => {
-        isTimeout = true;
-        reject(new Error("Fetch timeout"));
-      }, params.timeout);
-
-      fetch(url, params)
-        .then((res) => {
-          clearTimeout(timerId);
-          if (!isTimeout) {
-            resolve(res);
-          }
-        })
-        .catch((e) => {
-          if (isTimeout) {
-            return;
-          }
-          reject(e);
-        });
-    });
-  }
 }

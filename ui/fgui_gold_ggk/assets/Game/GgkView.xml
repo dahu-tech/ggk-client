@@ -15,13 +15,13 @@
     <image id="n85_mtru" name="n85" src="mtruh0" fileName="res/bt.png" xy="357,81" group="n97_mtru"/>
     <image id="n86_mtru" name="n86" src="mtrugt" fileName="res/jpcpdt.png" xy="316,140" group="n97_mtru"/>
     <text id="n92_mtru" name="tf_jp" xy="615,178" pivot="0.5,0.5" anchor="true" size="105,39" group="n97_mtru" font="ui://1as7p2p8ihx9be" fontSize="33" color="#ffffff" vAlign="middle" text="20000"/>
-    <component id="n89_mtru" name="com_win_num1" src="mtruht" fileName="com/Com_win_num_item.xml" xy="350,284" group="n97_mtru"/>
-    <component id="n93_mtru" name="com_win_num2" src="mtruht" fileName="com/Com_win_num_item.xml" xy="421,284" group="n97_mtru"/>
-    <component id="n94_mtru" name="com_win_num3" src="mtruht" fileName="com/Com_win_num_item.xml" xy="492,284" group="n97_mtru"/>
-    <component id="n95_mtru" name="com_win_num4" src="mtruht" fileName="com/Com_win_num_item.xml" xy="563,284" group="n97_mtru"/>
-    <component id="n96_mtru" name="com_win_num5" src="mtruht" fileName="com/Com_win_num_item.xml" xy="634,284" group="n97_mtru"/>
-    <loader3D id="n118_ojgw" name="ani_win_num" xy="44,287" size="648,619" group="n97_mtru" visible="false" url="ui://1as7p2p8su1ui0" animation="show_1" skin="" loop="true"/>
-    <group id="n97_mtru" name="n97" xy="44,81" size="681,825" advanced="true"/>
+    <component id="n89_mtru" name="com_win_num1" src="mtruht" fileName="com/Com_win_num_item.xml" xy="348,285" group="n97_mtru"/>
+    <component id="n93_mtru" name="com_win_num2" src="mtruht" fileName="com/Com_win_num_item.xml" xy="419,285" group="n97_mtru"/>
+    <component id="n94_mtru" name="com_win_num3" src="mtruht" fileName="com/Com_win_num_item.xml" xy="491,285" group="n97_mtru"/>
+    <component id="n95_mtru" name="com_win_num4" src="mtruht" fileName="com/Com_win_num_item.xml" xy="562,285" group="n97_mtru"/>
+    <component id="n96_mtru" name="com_win_num5" src="mtruht" fileName="com/Com_win_num_item.xml" xy="633,285" group="n97_mtru"/>
+    <loader3D id="n118_ojgw" name="ani_win_num" xy="42,288" size="648,619" group="n97_mtru" visible="false" url="ui://1as7p2p8su1ui0" animation="show_1" skin="" loop="true"/>
+    <group id="n97_mtru" name="n97" xy="42,81" size="683,826" advanced="true"/>
     <image id="n87_mtru" name="n87" src="mtruh5" fileName="res/xzq.png" xy="2,437" group="n56_ihx9"/>
     <component id="n119_ojgw" name="com_star1" src="ojgwi5" fileName="com/Com_star_item.xml" xy="192,499" group="n56_ihx9" visible="false"/>
     <component id="n120_ojgw" name="com_star2" src="ojgwi5" fileName="com/Com_star_item.xml" xy="226,499" group="n56_ihx9" visible="false"/>
@@ -40,7 +40,7 @@
     <text id="n54_ihx9" name="tf_auto" xy="524,1144" pivot="0.5,0.5" anchor="true" size="25,41" group="n56_ihx9" fontSize="30" color="#ffffff" align="center" vAlign="middle" text="--"/>
     <component id="n55_ihx9" name="com_speed" src="ihx9bs" fileName="com/Com_speed.xml" xy="618,1132" group="n56_ihx9"/>
     <image id="n101_mtru" name="n101" src="mtruhu" fileName="res/lotto.png" xy="535,545" group="n56_ihx9" visible="false"/>
-    <text id="n102_mtru" name="tf_num" xy="357,565" pivot="0.5,0.5" anchor="true" size="179,31" group="n56_ihx9" fontSize="22" color="#fcff00" align="center" vAlign="middle" strokeColor="#000000" strokeSize="2" text="Win up to $5,000"/>
+    <text id="n102_mtru" name="tf_num" xy="357,565" pivot="0.5,0.5" anchor="true" size="174,31" group="n56_ihx9" fontSize="22" color="#fcff00" align="center" vAlign="middle" strokeColor="#000000" strokeSize="2" text="Win up to $5,000"/>
     <component id="n103_mtru" name="com_lottory1" src="mtruhx" fileName="com/Com_lottory_item.xml" xy="30,599" group="n56_ihx9"/>
     <component id="n104_mtru" name="com_lottory2" src="mtruhx" fileName="com/Com_lottory_item.xml" xy="196,599" group="n56_ihx9"/>
     <component id="n105_mtru" name="com_lottory3" src="mtruhx" fileName="com/Com_lottory_item.xml" xy="362,599" group="n56_ihx9"/>
@@ -71,7 +71,7 @@
     </component>
     <image id="n1_harq" name="n1" src="r8771o" fileName="res/顶部栏.png" xy="96,1" group="n7_harq"/>
     <component id="n2_harq" name="btn_back" src="r8771p" fileName="com/Btn_back.xml" xy="10,1" group="n7_harq"/>
-    <text id="n3_harq" name="tf_money" xy="311,41" pivot="0.5,0.5" anchor="true" size="263,49" group="n7_harq" fontSize="36" color="#ffffff" align="center" vAlign="middle" text="1234567890.00"/>
+    <text id="n3_harq" name="tf_money" xy="311,41" pivot="0.5,0.5" anchor="true" size="264,49" group="n7_harq" fontSize="36" color="#ffffff" align="center" vAlign="middle" text="1234567890.00"/>
     <component id="n4_harq" name="btn_recharge" src="r8771q" fileName="com/Btn_recharge.xml" xy="457,0" group="n7_harq"/>
     <component id="n5_harq" name="btn_menu" src="r8771r" fileName="com/Btn_menu.xml" xy="613,1" group="n7_harq"/>
     <image id="n6_harq" name="n6" src="k15r64" fileName="res/金币icon.png" xy="105,9" pivot="0.5,0.5" group="n7_harq"/>

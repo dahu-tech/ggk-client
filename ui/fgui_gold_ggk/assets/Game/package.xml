@@ -206,5 +206,5 @@
     <image id="kqruio" name="good luck.png" path="/bmfont/win/"/>
     <image id="u4dcip" name="cp skip.png" path="/res/"/>
   </resources>
-  <publish name="" path="..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\assets\res\game\\script"/>
+  <publish name="" path="..\..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\..\assets\res\game\\script"/>
 </packageDescription>

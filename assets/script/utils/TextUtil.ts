@@ -1,11 +1,12 @@
 import { Config } from "../xx/Config";
 
 export class TextUtil {
-  public static fixMoneyNumber(value: number, amount: number = 2): string {
-    if (value >= 1000000000) {
-      return Math.floor(value / 1000) + "K";
+  public static fixMoneyNumber(value: any, amount: number = 2): string {
+    const val = Math.round(value * 100) / 100;
+    if (val >= 1000000000) {
+      return Math.floor(val / 1000) + "K";
     } else {
-      return this.fixNumber(value, amount);
+      return this.fixNumber(val, amount);
     }
   }
 

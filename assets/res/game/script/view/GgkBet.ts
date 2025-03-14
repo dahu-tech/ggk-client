@@ -94,7 +94,7 @@ export class GgkBet {
   }
 
   private setFreeSpinStatus(): void {
-    if (GameData.curGameInfo.freeSpinCount > 0) {
+    if (GameData.curGameInfo.spinNum > 0) {
       this.view.m_com_reveal.m_c1.selectedIndex = 2;
     } else {
       if (this.view.m_com_reveal.m_c1.selectedIndex == 2) {
@@ -114,9 +114,9 @@ export class GgkBet {
       this.auto--;
     }
 
-    if (GameData.curGameInfo.freeSpinCount > 0) {
+    if (GameData.curGameInfo.spinNum > 0) {
       GameData.isFreeBet = true;
-      GameData.curGameInfo.freeSpinCount--;
+      GameData.curGameInfo.spinNum--;
     } else {
       GameData.isFreeBet = false;
     }
@@ -152,11 +152,11 @@ export class GgkBet {
     if (GameConfig.isDev) {
       let random: number = Math.random();
       console.log("random : " + random);
-      let betCounter: number = GameData.curGameInfo.betCounter + 1;
-      let freeSpinCount: number = 0;
-      if (betCounter >= 10) {
-        betCounter = 0;
-        freeSpinCount = 1;
+      let roundIdx: number = GameData.curGameInfo.roundIdx + 1;
+      let spinNum: number = 0;
+      if (roundIdx >= 10) {
+        roundIdx = 0;
+        spinNum = 1;
       }
       if (random < 0) {
         betDto = {
@@ -231,8 +231,8 @@ export class GgkBet {
             totalReward: 10000, //所有彩票的奖励总和
             gameItemInfo: {
               chipsId: 1, //下注额id
-              freeSpinCount: freeSpinCount, //免费摇奖次数
-              betCounter: betCounter, //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+              spinNum: spinNum, //免费摇奖次数
+              roundIdx: roundIdx, //0-9,抽过多少次，到10清空，转换一次spinNum
             },
             jpRewardInfo: {
               //彩票jp奖励信息
@@ -309,12 +309,12 @@ export class GgkBet {
                 rewardIdx: 0, //
               },
             ],
-            rewardNumList: [1, 2, 3, 4, 5], //彩票中奖数字
+            rewardNumList: [parseInt((Math.random() + 1) * 10 + ""), 2, 3, 4, 5], //彩票中奖数字
             totalReward: 0, //所有彩票的奖励总和
             gameItemInfo: {
               chipsId: 1, //下注额id
-              freeSpinCount: freeSpinCount, //免费摇奖次数
-              betCounter: betCounter, //0-9,抽过多少次，到10清空，转换一次freeSpinCount
+              spinNum: spinNum, //免费摇奖次数
+              roundIdx: roundIdx, //0-9,抽过多少次，到10清空，转换一次spinNum
             },
             jpRewardInfo: {
               //彩票jp奖励信息
@@ -384,7 +384,7 @@ export class GgkBet {
     evt.propagationStopped = true;
     if (GameData.gameStatus != GameStatusEnum.PLAY) return;
 
-    // if(GameData.curGameInfo.freeSpinCount > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.freeSpinCount > 0)) return;
+    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.spinNum > 0)) return;
 
     this.view.m_c1.selectedIndex = 1;
   }
@@ -393,7 +393,7 @@ export class GgkBet {
     evt.propagationStopped = true;
     if (GameData.gameStatus != GameStatusEnum.PLAY) return;
 
-    // if(GameData.curGameInfo.freeSpinCount > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.freeSpinCount > 0)) return;
+    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.spinNum > 0)) return;
     this.view.m_c1.selectedIndex = 2;
   }
 
@@ -402,7 +402,7 @@ export class GgkBet {
     this.isAuto = false;
     this.setAutoStatus();
 
-    if (GameData.curGameInfo.freeSpinCount > 0) {
+    if (GameData.curGameInfo.spinNum > 0) {
       this.view.m_com_reveal.m_c1.selectedIndex = 2;
     } else {
       this.view.m_com_reveal.m_c1.selectedIndex = 0;
@@ -413,7 +413,7 @@ export class GgkBet {
     this.view.m_c1.selectedIndex = 0;
     this.setBetValue();
     this.setFreeSpinStatus();
-    // if(GameData.curGameInfo.freeSpinCount > 0){
+    // if(GameData.curGameInfo.spinNum > 0){
     //     this.onBtnSpinClick();
     // }
 

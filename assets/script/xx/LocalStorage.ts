@@ -8,33 +8,33 @@ export default class LocalStorage {
     return this._instance;
   }
 
-  set(key, value) {
+  set(key: string, value: any) {
     key = this.getKey(key);
     value = this.stringify(value);
     window.localStorage.setItem(key, value);
   }
-  get(key, defval = null) {
+  get(key: string, defval = null) {
     key = this.getKey(key);
     let value = window.localStorage.getItem(key);
     return value === null ? defval : this.parse(value);
   }
-  has(key) {
+  has(key: string) {
     return window.localStorage.getItem(this.getKey(key)) !== null;
   }
   get length() {
     return window.localStorage.length;
   }
-  remove(key) {
+  remove(key: string) {
     window.localStorage.removeItem(this.getKey(key));
   }
   clear() {
     window.localStorage.clear();
   }
 
-  getKey = (key) => {
+  getKey = (key: string) => {
     return `${this.keyPrefix}_${key}`;
   };
-  stringify(value) {
+  stringify(value: any) {
     if (typeof value === "function") {
       throw new Error("不支持 function 类型");
     }
@@ -44,7 +44,7 @@ export default class LocalStorage {
       throw new Error(`入参${value}可能存在环，导致 JSON.stringify(value) 失败`);
     }
   }
-  parse(value) {
+  parse(value: string) {
     return JSON.parse(value);
   }
   getParamValue(url, name) {

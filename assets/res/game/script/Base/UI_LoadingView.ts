@@ -6,7 +6,9 @@ import UI_Pb_loading from "./UI_Pb_loading";
 
 export default class UI_LoadingView extends fgui.GComponent {
 
-	public m_img_bg:fgui.GImage;
+	public m_n5:fgui.GGraph;
+	public m_n3:fgui.GImage;
+	public m_n4:fgui.GImage;
 	public m_pb_loading:UI_Pb_loading;
 	public static URL:string = "ui://iaouwyjslwfqf8";
 
@@ -15,7 +17,9 @@ export default class UI_LoadingView extends fgui.GComponent {
 	}
 
 	protected onConstruct():void {
-		this.m_img_bg = <fgui.GImage>(this.getChildAt(0));
-		this.m_pb_loading = <UI_Pb_loading>(this.getChildAt(1));
+		this.m_n5 = <fgui.GGraph>(this.getChildAt(0));
+		this.m_n3 = <fgui.GImage>(this.getChildAt(1));
+		this.m_n4 = <fgui.GImage>(this.getChildAt(2));
+		this.m_pb_loading = <UI_Pb_loading>(this.getChildAt(3));
 	}
 }

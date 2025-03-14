@@ -27,6 +27,10 @@
     <image id="dtysfp" name="jdt.png" path="/res/"/>
     <image id="dtysfq" name="jdtd.png" path="/res/"/>
     <image id="dtysfr" name="Lotto-Scratchcard-loading.jpg" path="/res/"/>
+    <image id="k481fw" name="loading_icon.png" path="/res/"/>
+    <image id="k481fx" name="loading_light.png" path="/res/"/>
+    <image id="k481fy" name="progress.png" path="/res/" scale="9grid" scale9grid="6,0,326,22"/>
+    <image id="k481fz" name="progress_bg.png" path="/res/"/>
   </resources>
-  <publish name="" path="..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\assets\res\game\\script"/>
+  <publish name="" path="..\..\assets\res\game\ui" packageCount="2" genCode="true" codePath="..\..\assets\res\game\\script"/>
 </packageDescription>

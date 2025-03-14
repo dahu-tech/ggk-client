@@ -641,8 +641,8 @@ export interface GoldGgkBLLLoadSvcChips {
   chipsId?: number;
   /** @format double */
   bet?: number;
-  betResultList?: number[] | null;
-  jpBonusList?: number[] | null;
+  prizeList?: number[] | null;
+  jackpotList?: number[] | null;
   /** @format double */
   jpReward?: number;
   /** @format double */
@@ -653,9 +653,9 @@ export interface GoldGgkBLLLoadSvcGameInfo {
   /** @format double */
   chipsId?: number;
   /** @format int32 */
-  freeSpinCount?: number;
+  spinNum?: number;
   /** @format int32 */
-  betCounter?: number;
+  roundIdx?: number;
 }
 
 export interface GoldGgkBLLLoadSvcGgkMeta {

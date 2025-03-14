@@ -45,9 +45,7 @@ export class GgkHud {
   }
 
   private onBtnRechargeClick(): void {
-    let data: any = { action: "openDeposit" };
-    console.log("post message : " + JSON.stringify(data));
-    window.top.postMessage(data, "*");
+    window.parent.postMessage("SHOW_DEPOSIT_IN_GAME", "*");
   }
 
   private onBtnBackClick(): void {
@@ -58,11 +56,12 @@ export class GgkHud {
 
   private onBtnServiceClick(): void {
     console.log("enter function onBtnServiceClick");
-    if (window.top) {
-      let data: any = { action: "openIM" };
-      console.log("post message : " + JSON.stringify(data));
-      window.top.postMessage(data, "*");
-    }
+    window.parent.postMessage("SHOW_SERVICE", "*");
+    // if (window.top) {
+    //   let data: any = { action: "openIM" };
+    //   console.log("post message : " + JSON.stringify(data));
+    //   window.top.postMessage(data, "*");
+    // }
   }
 
   private onBtnSoundClick(): void {

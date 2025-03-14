@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="720,1280">
+<component size="720,1280" bgColor="#000000">
   <displayList>
-    <image id="n0_lwfq" name="img_bg" src="dtysfr" fileName="res/Lotto-Scratchcard-loading.jpg" xy="360,640" pivot="0.5,0.5" anchor="true" size="720,1680">
+    <graph id="n5_grjm" name="n5" xy="-2,-200" size="722,1679" type="rect" fillColor="#ff000000">
       <relation target="" sidePair="center-center,middle-middle"/>
+    </graph>
+    <image id="n3_grjm" name="n3" src="k481fx" fileName="res/loading_light.png" xy="-1,-86">
+      <relation target="" sidePair="center-center,middle-middle%"/>
     </image>
-    <component id="n2_lwfq" name="pb_loading" src="lwfqf9" fileName="com/Pb_loading.xml" xy="67,1073">
+    <image id="n4_grjm" name="n4" src="k481fw" fileName="res/loading_icon.png" xy="183,219"/>
+    <component id="n2_lwfq" name="pb_loading" src="lwfqf9" fileName="com/Pb_loading.xml" xy="64,981">
       <relation target="" sidePair="center-center,middle-middle%"/>
       <ProgressBar max="100"/>
     </component>

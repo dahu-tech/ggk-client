@@ -68,17 +68,17 @@ export class GgkLottory {
       this.comLottoryList[i].m_tf_num.text = GameData.betDto.resultInfo.resultNumList[i].num + "";
       if (GameData.betDto.resultInfo.resultNumList[i].rewardIdx >= 0) {
         if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
-          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[GameData.betDto.resultInfo.resultNumList[i].rewardIdx] + "").replace(".", ",");
+          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.prizeList[GameData.betDto.resultInfo.resultNumList[i].rewardIdx] + "").replace(".", ",");
         } else {
           this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardIdx;
         }
       } else {
         let randomIdx: number = 0;
         if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
-          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.betResultList.length);
-          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.betResultList[randomIdx] + "").replace(".", ",");
+          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.prizeList.length);
+          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.prizeList[randomIdx] + "").replace(".", ",");
         } else {
-          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.jpBonusList.length);
+          randomIdx = Math.floor(Math.random() * Meta.curChipMeta.jackpotList.length);
           this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = randomIdx;
         }
       }

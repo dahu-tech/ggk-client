@@ -30,12 +30,12 @@ export class GgkStar {
 
   public doLogic(): void {
     for (let i: number = 0; i < this.comStarList.length; i++) {
-      this.comStarList[i].visible = i < GameData.curGameInfo.betCounter;
+      this.comStarList[i].visible = i < GameData.curGameInfo.roundIdx;
       if (this.comStarList[i].m_ani.content) {
         (this.comStarList[i].m_ani.content as sp.Skeleton).setCompleteListener(null);
         (this.comStarList[i].m_ani.content as sp.Skeleton).loop = true;
 
-        if (GameData.curGameInfo.betCounter <= 7) {
+        if (GameData.curGameInfo.roundIdx <= 7) {
           (this.comStarList[i].m_ani.content as sp.Skeleton).animation = "idle1";
         } else {
           (this.comStarList[i].m_ani.content as sp.Skeleton).animation = "idle2";
@@ -52,10 +52,10 @@ export class GgkStar {
     //    EventManager.emit(GameEvent.NEXT_GAME);
     // }else{
     //     let starIdx:number = 0;
-    //     if(GameData.betDto.resultInfo.gameItemInfo.freeSpinCount > 0){
+    //     if(GameData.betDto.resultInfo.gameItemInfo.spinNum > 0){
     //         starIdx = 9;
     //     }else{
-    //         starIdx = GameData.betDto.resultInfo.gameItemInfo.betCounter - 1;
+    //         starIdx = GameData.betDto.resultInfo.gameItemInfo.roundIdx - 1;
     //     }
     //     this.comStarList[starIdx].visible = true;
     //     if(this.comStarList[starIdx].m_ani.content){
@@ -72,7 +72,7 @@ export class GgkStar {
   }
 
   private onStarInComplete(): void {
-    if (GameData.betDto.resultInfo.gameItemInfo.freeSpinCount > 0) {
+    if (GameData.betDto.resultInfo.gameItemInfo.spinNum > 0) {
       EventManager.emit(GameEvent.SHOW_FREE_BET_ANI);
     } else {
       EventManager.emit(GameEvent.NEXT_GAME);

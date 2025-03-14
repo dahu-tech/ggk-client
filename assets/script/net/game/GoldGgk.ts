@@ -9,12 +9,7 @@
  * ---------------------------------------------------------------
  */
 
-import {
-  GoldGgkBLLBetSvcBetDto,
-  GoldGgkBLLBetSvcBetIpo,
-  GoldGgkBLLLoadSvcLoadDto,
-  GoldGgkBLLLoadSvcLoadIpo,
-} from "./data-contracts";
+import { GoldGgkBLLBetSvcBetDto, GoldGgkBLLBetSvcBetIpo, GoldGgkBLLLoadSvcLoadDto, GoldGgkBLLLoadSvcLoadIpo } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class GoldGgk<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
@@ -28,7 +23,7 @@ export class GoldGgk<SecurityDataType = unknown> extends HttpClient<SecurityData
    */
   load = (data: GoldGgkBLLLoadSvcLoadIpo, params: RequestParams = {}) =>
     this.request<GoldGgkBLLLoadSvcLoadDto, any>({
-      path: `/api/GoldGgk/Load`,
+      path: `/v1/ggk/load`,
       method: "POST",
       body: data,
       secure: true,

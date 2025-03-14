@@ -74,6 +74,9 @@ export class Config {
   _osType: any;
   _browserType: any;
   constructor() {
+    this.appUrl = "http://192.168.1.3:8001";
+    this.userId = "eaea583eb8504799a6e684be927f2ffb";
+    this.currencyId = "ETB";
     /** 应用类型：1-大厅 2-游戏 */
     this.appType = 2;
     /** 应用状态0-正常1-维护 */
