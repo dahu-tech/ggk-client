@@ -41,7 +41,7 @@ export class GoldGgk<SecurityDataType = unknown> extends HttpClient<SecurityData
    */
   bet = (data: GoldGgkBLLBetSvcBetIpo, params: RequestParams = {}) =>
     this.request<GoldGgkBLLBetSvcBetDto, any>({
-      path: `/api/GoldGgk/Bet`,
+      path: `/v1/ggk/spin`,
       method: "POST",
       body: data,
       secure: true,

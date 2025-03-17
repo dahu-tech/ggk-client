@@ -95,16 +95,21 @@ export default class GameEntry extends Component {
 
     if (!GameConfig.isDev) {
       let loadIpo: GoldGgkBLLLoadSvcLoadIpo = { userId: Config.instance.userId, currencyId: Config.instance.currencyId };
-      let loadDto: HttpResponse<GoldGgkBLLLoadSvcLoadDto> = await api.goldGgk.load(loadIpo);
-      console.log("loadDto.result : " + JSON.stringify(loadDto.result));
-      if (loadDto.result === null) {
-        this.errorAlter();
+      let loadDto: HttpResponse<GoldGgkBLLLoadSvcLoadDto>;
+      try {
+        loadDto = await api.goldGgk.load(loadIpo);
+        console.log("loadDto.result : " + JSON.stringify(loadDto.result));
+        if (loadDto.result === null) {
+          this.errorAlter();
 
-        return;
+          return;
+        }
+        Meta.genMeta(loadDto.result.meta);
+        GameData.playerInfo = loadDto.result.playerInfo;
+        GameData.genGameInfo(loadDto.result.gameInfo);
+      } catch (error) {
+        this.errorAlter();
       }
-      Meta.genMeta(loadDto.result.meta);
-      GameData.playerInfo = loadDto.result.playerInfo;
-      GameData.genGameInfo(loadDto.result.gameInfo);
     } else {
       let loadDto: GoldGgkBLLLoadSvcLoadDto = {
         playerInfo: {
@@ -113,17 +118,17 @@ export default class GameEntry extends Component {
         gameInfo: [
           {
             chipsId: 1,
-            spinNum: 0,
+            freeSpinNum: 0,
             roundIdx: 0,
           },
           {
             chipsId: 2,
-            spinNum: 0,
+            freeSpinNum: 0,
             roundIdx: 0,
           },
           {
             chipsId: 3,
-            spinNum: 0,
+            freeSpinNum: 0,
             roundIdx: 0,
           },
         ],

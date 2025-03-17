@@ -52,10 +52,10 @@ export class GgkStar {
     //    EventManager.emit(GameEvent.NEXT_GAME);
     // }else{
     //     let starIdx:number = 0;
-    //     if(GameData.betDto.resultInfo.gameItemInfo.spinNum > 0){
+    //     if(GameData.betDto.resultInfo.gameInfo.spinNum > 0){
     //         starIdx = 9;
     //     }else{
-    //         starIdx = GameData.betDto.resultInfo.gameItemInfo.roundIdx - 1;
+    //         starIdx = GameData.betDto.resultInfo.gameInfo.roundIdx - 1;
     //     }
     //     this.comStarList[starIdx].visible = true;
     //     if(this.comStarList[starIdx].m_ani.content){
@@ -72,7 +72,7 @@ export class GgkStar {
   }
 
   private onStarInComplete(): void {
-    if (GameData.betDto.resultInfo.gameItemInfo.spinNum > 0) {
+    if (GameData.betDto.resultInfo.gameInfo.freeSpinNum > 0) {
       EventManager.emit(GameEvent.SHOW_FREE_BET_ANI);
     } else {
       EventManager.emit(GameEvent.NEXT_GAME);

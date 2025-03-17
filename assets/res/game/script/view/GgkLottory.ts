@@ -64,17 +64,17 @@ export class GgkLottory {
     (this.view.m_ani_lottory.content as sp.Skeleton).timeScale = GameData.speedType;
 
     for (let i: number = 0; i < this.comLottoryList.length; i++) {
-      this.comLottoryList[i].m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardType;
-      this.comLottoryList[i].m_tf_num.text = GameData.betDto.resultInfo.resultNumList[i].num + "";
-      if (GameData.betDto.resultInfo.resultNumList[i].rewardIdx >= 0) {
-        if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
-          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.prizeList[GameData.betDto.resultInfo.resultNumList[i].rewardIdx] + "").replace(".", ",");
+      this.comLottoryList[i].m_c1.selectedIndex = GameData.betDto.resultInfo.cardTable[i].rewardType;
+      this.comLottoryList[i].m_tf_num.text = GameData.betDto.resultInfo.cardTable[i].num + "";
+      if (GameData.betDto.resultInfo.cardTable[i].rewardIdx >= 0) {
+        if (GameData.betDto.resultInfo.cardTable[i].rewardType == 1) {
+          this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.prizeList[GameData.betDto.resultInfo.cardTable[i].rewardIdx] + "").replace(".", ",");
         } else {
-          this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = GameData.betDto.resultInfo.resultNumList[i].rewardIdx;
+          this.comLottoryList[i].m_com_reward_jp_type.m_c1.selectedIndex = GameData.betDto.resultInfo.cardTable[i].rewardIdx;
         }
       } else {
         let randomIdx: number = 0;
-        if (GameData.betDto.resultInfo.resultNumList[i].rewardType == 1) {
+        if (GameData.betDto.resultInfo.cardTable[i].rewardType == 1) {
           randomIdx = Math.floor(Math.random() * Meta.curChipMeta.prizeList.length);
           this.comLottoryList[i].m_tf_reward.text = "" + (Meta.curChipMeta.prizeList[randomIdx] + "").replace(".", ",");
         } else {
@@ -93,10 +93,10 @@ export class GgkLottory {
     let rewardNum: number;
     let lottoryNum: number;
     let rewardNumIdx: number = 0;
-    for (let i: number = 0; i < GameData.betDto.resultInfo.rewardNumList.length; i++) {
-      rewardNum = GameData.betDto.resultInfo.rewardNumList[i];
-      for (let j: number = 0; j < GameData.betDto.resultInfo.resultNumList.length; j++) {
-        lottoryNum = GameData.betDto.resultInfo.resultNumList[j].num;
+    for (let i: number = 0; i < GameData.betDto.resultInfo.winNums.length; i++) {
+      rewardNum = GameData.betDto.resultInfo.winNums[i];
+      for (let j: number = 0; j < GameData.betDto.resultInfo.cardTable.length; j++) {
+        lottoryNum = GameData.betDto.resultInfo.cardTable[j].num;
         if (rewardNum == lottoryNum) {
           this.showRewardNum(i, j, rewardNumIdx);
           rewardNumIdx++;

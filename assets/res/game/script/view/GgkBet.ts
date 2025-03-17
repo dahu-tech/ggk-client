@@ -94,7 +94,7 @@ export class GgkBet {
   }
 
   private setFreeSpinStatus(): void {
-    if (GameData.curGameInfo.spinNum > 0) {
+    if (GameData.curGameInfo.freeSpinNum > 0) {
       this.view.m_com_reveal.m_c1.selectedIndex = 2;
     } else {
       if (this.view.m_com_reveal.m_c1.selectedIndex == 2) {
@@ -114,9 +114,9 @@ export class GgkBet {
       this.auto--;
     }
 
-    if (GameData.curGameInfo.spinNum > 0) {
+    if (GameData.curGameInfo.freeSpinNum > 0) {
       GameData.isFreeBet = true;
-      GameData.curGameInfo.spinNum--;
+      GameData.curGameInfo.freeSpinNum--;
     } else {
       GameData.isFreeBet = false;
     }
@@ -153,10 +153,10 @@ export class GgkBet {
       let random: number = Math.random();
       console.log("random : " + random);
       let roundIdx: number = GameData.curGameInfo.roundIdx + 1;
-      let spinNum: number = 0;
+      let freeSpinNum: number = 0;
       if (roundIdx >= 10) {
         roundIdx = 0;
-        spinNum = 1;
+        freeSpinNum = 1;
       }
       if (random < 0) {
         betDto = {
@@ -164,7 +164,7 @@ export class GgkBet {
             balance: GameData.playerInfo.balance + Meta.bet,
           },
           resultInfo: {
-            resultNumList: [
+            cardTable: [
               {
                 //彩票上的所有元素
                 num: 5,
@@ -227,17 +227,15 @@ export class GgkBet {
                 rewardIdx: 0, //
               },
             ],
-            rewardNumList: [1, 2, 3, 4, 5], //彩票中奖数字
+            winNums: [1, 2, 3, 4, 5], //彩票中奖数字
             totalReward: 10000, //所有彩票的奖励总和
-            gameItemInfo: {
+            gameInfo: {
               chipsId: 1, //下注额id
-              spinNum: spinNum, //免费摇奖次数
+              freeSpinNum: freeSpinNum, //免费摇奖次数
               roundIdx: roundIdx, //0-9,抽过多少次，到10清空，转换一次spinNum
             },
-            jpRewardInfo: {
-              //彩票jp奖励信息
-              isTriggerJpReward: true, //是否收集齐彩票，触发jp抽奖
-            },
+
+            isTriggerJp: true, //是否收集齐彩票，触发jp抽奖
           },
         };
       } else {
@@ -246,7 +244,7 @@ export class GgkBet {
             balance: GameData.playerInfo.balance + Meta.bet,
           },
           resultInfo: {
-            resultNumList: [
+            cardTable: [
               {
                 //彩票上的所有元素
                 num: 5,
@@ -260,8 +258,8 @@ export class GgkBet {
               },
               {
                 num: 3,
-                rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardType: 2, //1-基础奖金,2-jp奖金
+                rewardIdx: 3, //
               },
               {
                 num: 4,
@@ -309,17 +307,14 @@ export class GgkBet {
                 rewardIdx: 0, //
               },
             ],
-            rewardNumList: [parseInt((Math.random() + 1) * 10 + ""), 2, 3, 4, 5], //彩票中奖数字
-            totalReward: 0, //所有彩票的奖励总和
-            gameItemInfo: {
+            winNums: [1, 2, 3, 4, 5], //彩票中奖数字
+            totalReward: 100, //所有彩票的奖励总和
+            gameInfo: {
               chipsId: 1, //下注额id
-              spinNum: spinNum, //免费摇奖次数
+              freeSpinNum: freeSpinNum, //免费摇奖次数
               roundIdx: roundIdx, //0-9,抽过多少次，到10清空，转换一次spinNum
             },
-            jpRewardInfo: {
-              //彩票jp奖励信息
-              isTriggerJpReward: true, //是否收集齐彩票，触发jp抽奖
-            },
+            isTriggerJp: true, //是否收集齐彩票，触发jp抽奖
           },
         };
       }
@@ -384,7 +379,7 @@ export class GgkBet {
     evt.propagationStopped = true;
     if (GameData.gameStatus != GameStatusEnum.PLAY) return;
 
-    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.spinNum > 0)) return;
+    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameInfo.spinNum > 0)) return;
 
     this.view.m_c1.selectedIndex = 1;
   }
@@ -393,7 +388,7 @@ export class GgkBet {
     evt.propagationStopped = true;
     if (GameData.gameStatus != GameStatusEnum.PLAY) return;
 
-    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameItemInfo.spinNum > 0)) return;
+    // if(GameData.curGameInfo.spinNum > 0 || (GameData.betDto != null && GameData.betDto.resultInfo.gameInfo.spinNum > 0)) return;
     this.view.m_c1.selectedIndex = 2;
   }
 
@@ -402,7 +397,7 @@ export class GgkBet {
     this.isAuto = false;
     this.setAutoStatus();
 
-    if (GameData.curGameInfo.spinNum > 0) {
+    if (GameData.curGameInfo.freeSpinNum > 0) {
       this.view.m_com_reveal.m_c1.selectedIndex = 2;
     } else {
       this.view.m_com_reveal.m_c1.selectedIndex = 0;

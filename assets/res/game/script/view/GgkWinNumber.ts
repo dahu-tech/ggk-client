@@ -49,7 +49,7 @@ export class GgkWinNumber {
 
     for (let i: number = 0; i < this.comWinNumList.length; i++) {
       this.comWinNumList[i].m_c1.selectedIndex = 1;
-      this.comWinNumList[i].m_tf_num.text = GameData.betDto.resultInfo.rewardNumList[i] + "";
+      this.comWinNumList[i].m_tf_num.text = GameData.betDto.resultInfo.winNums[i] + "";
     }
 
     AudioManager.instance.playSound("sound/gua", ResManager.instance.getBundle("game"));

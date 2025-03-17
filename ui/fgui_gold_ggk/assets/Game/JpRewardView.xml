@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="720,1280">
-  <controller name="c1" pages="0,open,1,coin_ani,2,idle" selected="1"/>
+  <controller name="c1" pages="0,open,1,coin_ani,2,idle" selected="0"/>
   <displayList>
     <loader3D id="n7_ojgw" name="ani_coin" xy="-243,-388" size="1182,1672" group="n3_o2xz" url="ui://1as7p2p8ojgwi9" animation="lotto_coin_open" skin="" loop="true">
       <gearDisplay controller="c1" pages="1,2"/>

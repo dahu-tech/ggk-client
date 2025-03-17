@@ -30,13 +30,13 @@ export class GgkReward {
   }
 
   private onShowReward(): void {
-    if (GameData.betDto.resultInfo.totalReward > 0) {
+    if (Number(GameData.betDto.resultInfo.totalReward) > 0) {
       this.view.m_tf_win.text = "w" + GameData.betDto.resultInfo.totalReward;
       // Timer.instance.once(3000, this, function():void{
       EventManager.emit(GameEvent.SHOW_REWARD_GOLD_ANI);
       // });
 
-      GameData.playerInfo.balance += GameData.betDto.resultInfo.totalReward;
+      GameData.playerInfo.balance += Number(GameData.betDto.resultInfo.totalReward);
       EventManager.emit(GameEvent.REFRESH_PLAYER);
     } else {
       this.view.m_tf_win.text = "y";

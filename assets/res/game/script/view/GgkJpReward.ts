@@ -62,7 +62,7 @@ export class GgkJpReward {
   }
 
   private onShowJpReward(): void {
-    if (GameData.betDto.resultInfo.jpRewardInfo.isTriggerJpReward) {
+    if (GameData.betDto.resultInfo.isTriggerJp) {
       JpRewardPopup.instance.open(Meta.curChipMeta.jpReward);
     } else {
       EventManager.emit(GameEvent.CHECK_STAR_UP);

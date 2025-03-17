@@ -29,19 +29,19 @@ export class GameData {
     }
 
     this.curGameInfo = this.gameInfo[this.curGameIndex];
-    this.isFreeBet = this.curGameInfo.spinNum > 0;
+    this.isFreeBet = this.curGameInfo.freeSpinNum > 0;
   }
 
   public static changeGame(chipIndex: number): void {
     this.curGameIndex = chipIndex;
     this.curGameInfo = this.gameInfo[chipIndex];
-    this.isFreeBet = this.curGameInfo.spinNum > 0;
+    this.isFreeBet = this.curGameInfo.freeSpinNum > 0;
     this.needResetGame = false;
   }
 
   public static sync(): void {
     this.playerInfo = this.betDto.playerInfo;
-    this.gameInfo[this.curGameIndex] = this.betDto.resultInfo.gameItemInfo;
-    this.curGameInfo = this.betDto.resultInfo.gameItemInfo;
+    this.gameInfo[this.curGameIndex] = this.betDto.resultInfo.gameInfo;
+    this.curGameInfo = this.betDto.resultInfo.gameInfo;
   }
 }

@@ -15,18 +15,18 @@ Dto
 	"gameInfo":[
 		{
 			"bet" : 10, //下注额，与下面betJpBonus中的数据应该是一一对应关系
-			"spinNum" : 0,//免费摇奖次数
-			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
+			"freeSpinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次freeSpinNum
 		},
 		{
 			"bet" : 50, //下注额
-			"spinNum" : 0,//免费摇奖次数
-			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
+			"freeSpinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次freeSpinNum
 		},
 		{
 			"bet" : 100, //下注额
-			"spinNum" : 0,//免费摇奖次数
-			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
+			"freeSpinNum" : 0,//免费摇奖次数
+			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次freeSpinNum
 		}
 	],
 	//纯配置信息
@@ -61,7 +61,7 @@ Dto
 	},
 	//总的结果信息
 	"resultInfo":{
-		"resultNumList":[{//彩票上的所有元素
+		"cardTable":[{//彩票上的所有元素
 			"num":5, 
 			"rewardType":1,//1-基础奖金,2-jp奖金
 			"rewardIdx":0//-1代表没中奖
@@ -110,16 +110,15 @@ Dto
 			"rewardType":1,//1-基础奖金,2-jp奖金
 			"rewardIdx":0//
 		}],
-		"rewardNumList":[1,2,3,4,5],//彩票中奖数字
+		"winNums":[1,2,3,4,5],//彩票中奖数字
 		"totalReward":10000,//所有彩票的奖励总和
-		"gameItemInfo":{
+		"gameInfo":{
 			"bet" : 10, //下注额
 			"spinNum" : 0,//免费摇奖次数
 			"roundIdx":0 //0-9,抽过多少次，到10清空，转换一次spinNum
 		}
-		"jpRewardInfo":{//彩票jp奖励信息
-			"isTriggerJpReward": true,//是否收集齐彩票，触发jp抽奖
-		}
+		"isTriggerJp": true,//是否收集齐彩票，触发jp抽奖
+		
 		
 	}
 }

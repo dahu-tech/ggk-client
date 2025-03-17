@@ -619,12 +619,12 @@ export interface GoldGgkBLLBetSvcJpRewardInfo {
 }
 
 export interface GoldGgkBLLBetSvcResultInfo {
-  resultNumList?: GoldGgkBLLBetSvcResultNum[] | null;
+  cardTable?: GoldGgkBLLBetSvcResultNum[] | null;
   /** @format double */
-  totalReward?: number;
-  gameItemInfo?: GoldGgkBLLLoadSvcGameInfo;
-  rewardNumList?: number[] | null;
-  jpRewardInfo?: GoldGgkBLLBetSvcJpRewardInfo;
+  totalReward?: string | number;
+  gameInfo?: GoldGgkBLLLoadSvcGameInfo;
+  winNums?: number[] | null;
+  isTriggerJp?: boolean;
 }
 
 export interface GoldGgkBLLBetSvcResultNum {
@@ -653,7 +653,7 @@ export interface GoldGgkBLLLoadSvcGameInfo {
   /** @format double */
   chipsId?: number;
   /** @format int32 */
-  spinNum?: number;
+  freeSpinNum?: number;
   /** @format int32 */
   roundIdx?: number;
 }
