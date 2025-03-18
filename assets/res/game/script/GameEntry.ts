@@ -99,16 +99,17 @@ export default class GameEntry extends Component {
       try {
         loadDto = await api.goldGgk.load(loadIpo);
         console.log("loadDto.result : " + JSON.stringify(loadDto.result));
-        if (loadDto.result === null) {
-          this.errorAlter();
 
-          return;
-        }
         Meta.genMeta(loadDto.result.meta);
         GameData.playerInfo = loadDto.result.playerInfo;
         GameData.genGameInfo(loadDto.result.gameInfo);
       } catch (error) {
         this.errorAlter();
+      }
+      if (loadDto.result === null) {
+        this.errorAlter();
+
+        return;
       }
     } else {
       let loadDto: GoldGgkBLLLoadSvcLoadDto = {

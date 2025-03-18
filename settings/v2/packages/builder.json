@@ -14,8 +14,15 @@
     }
   },
   "splash-setting": {
-    "url": "D:\\project_zhixinkeji\\logo\\logo_pt.png",
+    "url": "C:\\Users\\34905\\Desktop\\logo2.png",
     "displayRatio": 1,
-    "displayWatermark": false
+    "displayWatermark": false,
+    "clearColor": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "totalTime": 2000
   }
 }

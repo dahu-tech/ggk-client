@@ -1,5 +1,6 @@
 import { Config } from "./Config";
 import LocalStorage from "./LocalStorage";
+// import * as i18n from "db://i18n/LanguageData";
 export interface IAppEvents {
   onGlobalError(message: string, code: string, data: any): any;
 }
@@ -28,6 +29,14 @@ export class App {
       return params;
     };
     this._config = Config.instance;
+    // Config.instance.appUrl = "http://192.168.1.3:8001"; // BASE_URL;
+    Config.instance.appUrl = "https://game-api.megalake.games"; // 日常BASE_URL;
+    // Config.instance.appUrl = "https://g-api.vivagameclub.com"; // 生产BASE_URL;
+    // Config.instance.currencyId = "ETB";
+    Config.instance.currencyId = this._getLocalUrlParams().currency;
+    // Config.instance.userId = "eaea583eb8504799a6e684be927f2ffb";
+    Config.instance.userId = this._getLocalUrlParams().uid;
+    Config.instance.appToken = this._getLocalUrlParams().token || null;
     this._url = window.location.href;
   }
   /**

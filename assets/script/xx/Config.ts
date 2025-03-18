@@ -21,8 +21,6 @@ export class Config {
   appId: string;
   /** 应用类型：1-大厅 2-游戏 */
   appType: number;
-  /** 应用状态0-正常1-维护 */
-  appStatus: number;
   /** 系统维护时间文本，如：2020-01-01 10:00:00 - 2020-01-01 12:00:00 */
   appMaintText: string;
   /** 应用连接方式: 1-api+ticket 2-ws */
@@ -74,13 +72,11 @@ export class Config {
   _osType: any;
   _browserType: any;
   constructor() {
-    this.appUrl = "http://192.168.1.3:8001";
-    this.userId = "eaea583eb8504799a6e684be927f2ffb";
-    this.currencyId = "ETB";
+    // this.appUrl = "http://192.168.1.3:8001";
+    // this.userId = "eaea583eb8504799a6e684be927f2ffb";
+    // this.currencyId = "ETB";
     /** 应用类型：1-大厅 2-游戏 */
     this.appType = 2;
-    /** 应用状态0-正常1-维护 */
-    this.appStatus = 0;
     /** 应用连接方式: 1-api+ticket 2-ws */
     this.appLink = 1;
     /** app支持的语言（默认放第一个） */
