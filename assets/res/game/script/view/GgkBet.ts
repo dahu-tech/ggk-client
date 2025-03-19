@@ -122,7 +122,7 @@ export class GgkBet {
     }
 
     if (!GameData.isFreeBet) {
-      if (GameData.playerInfo.balance < Meta.bet) {
+      if (Number(GameData.playerInfo.balance) < Meta.bet) {
         this.auto = 0;
         this.isAuto = false;
         this.setAutoStatus();
@@ -161,7 +161,7 @@ export class GgkBet {
       if (random < 0) {
         betDto = {
           playerInfo: {
-            balance: GameData.playerInfo.balance + Meta.bet,
+            balance: Number(GameData.playerInfo.balance) + +Meta.bet,
           },
           resultInfo: {
             cardTable: [
@@ -241,7 +241,7 @@ export class GgkBet {
       } else {
         betDto = {
           playerInfo: {
-            balance: GameData.playerInfo.balance + Meta.bet,
+            balance: Number(GameData.playerInfo.balance) + Meta.bet,
           },
           resultInfo: {
             cardTable: [
@@ -350,7 +350,7 @@ export class GgkBet {
         EventManager.emit(GameEvent.OPEN_WIN_NUMBER);
       }
       if (!GameData.isFreeBet) {
-        GameData.playerInfo.balance -= Meta.bet;
+        GameData.playerInfo.balance = Number(GameData.playerInfo.balance) - Meta.bet;
         EventManager.emit(GameEvent.REFRESH_PLAYER);
       }
 

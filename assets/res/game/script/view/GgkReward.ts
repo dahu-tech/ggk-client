@@ -36,7 +36,7 @@ export class GgkReward {
       EventManager.emit(GameEvent.SHOW_REWARD_GOLD_ANI);
       // });
 
-      GameData.playerInfo.balance += Number(GameData.betDto.resultInfo.totalReward);
+      GameData.playerInfo.balance = Number(GameData.playerInfo.balance) + Number(GameData.betDto.resultInfo.totalReward);
       EventManager.emit(GameEvent.REFRESH_PLAYER);
     } else {
       this.view.m_tf_win.text = "y";

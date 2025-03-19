@@ -51,7 +51,8 @@ export class GgkHud {
   private onBtnBackClick(): void {
     let data: any = { action: "back" };
     console.log("post message : " + JSON.stringify(data));
-    window.top.postMessage(data, "*");
+    // window.top.postMessage(data, "*");
+    window.history.go(-1);
   }
 
   private onBtnServiceClick(): void {

@@ -155,7 +155,7 @@ export class JpRewardPopup extends AnimationPopup {
     super.hideImmediately();
     EventManager.emit(GameEvent.SHOW_JP_GOLD_ANI);
 
-    GameData.playerInfo.balance += this.win;
+    GameData.playerInfo.balance = Number(GameData.playerInfo.balance) + this.win;
     EventManager.emit(GameEvent.REFRESH_PLAYER);
   }
 }
