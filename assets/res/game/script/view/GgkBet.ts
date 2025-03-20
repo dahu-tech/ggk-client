@@ -204,27 +204,27 @@ export class GgkBet {
               {
                 num: 8,
                 rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardIdx: 5, //
               },
               {
                 num: 9,
                 rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardIdx: 4, //
               },
               {
                 num: 6,
                 rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardIdx: 3, //
               },
               {
                 num: 12,
                 rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardIdx: 2, //
               },
               {
                 num: 11,
                 rewardType: 1, //1-基础奖金,2-jp奖金
-                rewardIdx: 0, //
+                rewardIdx: 1, //
               },
             ],
             winNums: [1, 2, 3, 4, 5], //彩票中奖数字

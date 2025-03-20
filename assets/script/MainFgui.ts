@@ -7,10 +7,17 @@ const { ccclass, property } = _decorator;
 // import { api } from './net/game';
 
 import { ResManager } from "./engine/manager/ResManager";
+import { BUILD, DEV } from "cc/env";
 
 @ccclass
 export default class MainFgui extends Component {
-  onLoad() {}
+  onLoad() {
+    if (BUILD) {
+      console.log = () => {};
+      console.warn = () => {};
+      console.error = () => {};
+    }
+  }
 
   async start() {
     console.log("main fgui start");
